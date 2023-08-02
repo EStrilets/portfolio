@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body { 
+  background-color:#fc8f00;
+  /* background: linear-gradient(125deg, rgb(216, 119, 159) 0%, hsla(49, 89%, 61%, 1) 100%);;
+	animation: gradient 40s ease infinite; */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
