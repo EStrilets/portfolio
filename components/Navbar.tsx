@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { BsGithub } from "react-icons/bs";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import path from "path";
 
 
 
@@ -16,22 +18,23 @@ const navList = [
   },
   {
     name: "Projects",
-    link: "projects",
+    link: "/projects",
     id: 2,
   },
   {
     name: "Experience",
-    link: "experience",
+    link: "/experience",
     id: 3,
   },
   {
     name: "Contact",
-    link: "contact",
+    link: "/contact",
     id: 4,
   },
 ];
 
 const Navbar = () => {
+  const pathname = usePathname()
   const [isSticky, setIsSticky] = useState(false);
   const [isSelected, setSelected] = useState(0);
 
@@ -55,9 +58,14 @@ const Navbar = () => {
     const storedSelected = localStorage.getItem("isSelected");
 
     if (storedSelected !== null) {
-      setSelected(parseInt(storedSelected));
+      const currentRoute = pathname;
+      const selectedItem = navList.find((item) => item.link === currentRoute);
+
+      if (selectedItem) {
+        setSelected(selectedItem.id);
+      }
     }
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     localStorage.setItem("isSelected", isSelected.toString());
@@ -75,7 +83,6 @@ const Navbar = () => {
           w-full 
           md:flex 
           md:w-auto 
-        
           px-10 py-[1rem] mt-2
           backdrop-blur-lg
           rounded-lg
