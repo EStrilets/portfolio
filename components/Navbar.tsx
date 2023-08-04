@@ -90,8 +90,8 @@ const Navbar = () => {
           space-x-6
           `}
         >
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            Y
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+            Work in Progress...
           </span>
         </div>
         <div

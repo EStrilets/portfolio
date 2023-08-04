@@ -45,18 +45,3 @@ const TechTabs: React.FC<TabsProps> = ({ tabs, activeTab, handleTabClick }) => {
 };
 
 export default TechTabs;
-
-
-{/* <div
-        className="
-         w-full 
-         h-20 
-         bg-black/[0.6] 
-         rounded-lg 
-         border-2 border-black 
-         p-4
-        text-2xl text-[#FA7B00] font-semibold
-        "
-      >
-        Hello word
-      </div> */}

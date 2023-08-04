@@ -1,3 +1,6 @@
+import { FrontEndChart } from "@/components/charts/FrontEndChart";
+
+
 interface CardProps {
   title?: string;
 }
@@ -13,10 +16,9 @@ const Bubble = () => {
 
 const TechCard: React.FC<CardProps> = ({ title }) => {
   return (
-    <div className="bg-white text-black flex-1">
-      <h1> {title} </h1>
+    <div className="flex flex-row justify-center items-center align-middle text-black">
       <div className="flex">
-        <Bubble />
+        <FrontEndChart />
       </div>
     </div>
   );

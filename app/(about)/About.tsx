@@ -35,77 +35,78 @@
         visible: { opacity: 1 },
     };
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24 lg:mt-20">
+      <main className="flex min-h-screen flex-col items-center justify-between p-24 lg:mt-20">
         <div className="z-10 w-full max-w-6xl items-start justify-between lg:flex m-2">
-            <div className="flex-auto w-64">
+          <div className="flex-auto w-64">
             <div className="flex flex-col items-start justify-start space-y-4">
-                <h1 className="text-5xl font-semibold font-sans">
+              <h1 className="text-5xl font-semibold font-sans">
                 Yevhenii Strilets
-                </h1>
-                <h2 className="text-3xl font-semibold font-sans">
+              </h1>
+              <h2 className="text-3xl font-semibold font-sans">
                 Full Stack Developer
-                </h2>
-                <p className="text-xl font-sans">
+              </h2>
+              <p className="text-xl font-sans">
                 I build accessible, inclusive products and digital <br />
                 experiences for the web.
-                </p>
+              </p>
             </div>
-            </div>
-            <div className="flex-auto w-64 items-start justify-start ml-2 space-y-4">
+          </div>
+          <div className="flex-auto w-64 items-start justify-start ml-2 space-y-4">
             <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeInVariants}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInVariants}
             >
-                <h1 className="text-xl font-sans">
-                Back in 2012, I decided to try my hand at creating custom Tumblr
-                themes and tumbled head first into the rabbit hole of coding and
-                web development. Fast-forward to today, and I’ve had the privilege
-                of building software for an advertising agency, a start-up, a
-                student-led design studio, and a huge corporation.
-                </h1>
+              <h1 className="text-xl font-sans">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting,
+              </h1>
             </motion.div>
             <p className="text-xl font-sans">
-                My main focus these days is building products and leading projects
-                for our clients at Upstatement. In my free time Ive also released an
-                online video course that covers everything you need to know to build
-                a web app with the Spotify API.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
             </p>
             <p className="text-xl font-sans">
-                When I’m not at the computer, I’m usually rock climbing, hanging out
-                with my wife and two cats, or running around Hyrule searching for
-                Korok seeds K o r o k s e e d s .
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
             </p>
             <div className="flex">
-                <Scene />
-                <Scene />
-                <Scene />
-                <Scene />
+              <Scene />
+              <Scene />
+              <Scene />
+              <Scene />
             </div>
-            </div>
-        </div>
-        <div className="w-full max-w-6xl items-center justify-start mt-[5rem] border-b-4 border-black">
-            <h2 className="text-5xl font-semibold">Technical Stack</h2>
+          </div>
         </div>
 
-        <div className="z-10 w-full max-w-6xl items-start justify-between lg:flex m-2">
-            <div className="flex-1 w-64">
-            <TechTabs
-                tabs={tabs}
-                activeTab={activeTab}
-                handleTabClick={handleTabClick}
-            />
+        <div className="z-10 flex flex-row w-full max-w-6xl items-center justify-between">
+          <div className="flex-1 w-64 flex flex-col">
+            <div className="mt-[5rem] text-center">
+              <h2 className="text-5xl font-semibold">Technical Stack</h2>
             </div>
-            <div className="flex-auto w-64 ml-2 space-y-4 flex flex-col">
+            <TechTabs
+              tabs={tabs}
+              activeTab={activeTab}
+              handleTabClick={handleTabClick}
+            />
+          </div>
+          <div className="flex-auto w-64 space-y-4 mt-[7rem]">
             {tabs.map(
-                (tab) =>
+              (tab) =>
                 activeTab === tab.id && (
-                    <TechCard key={tab.id} title={tab.title} />
+                  <TechCard key={tab.id} title={tab.title} />
                 )
             )}
-            </div>
+          </div>
         </div>
-        </main>
+      </main>
     );
     };
 
