@@ -1,56 +1,28 @@
 const Footer = () => {
   return (
-    <footer className="bg-transperant mt-28">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer className="bg-transperant mt-28 bg-[#141B2D] border-t-[0.5px] border-[#1E2A45]">
+      <div className="mx-auto w-full max-w-4xl p-4 py-6 lg:py-8 text-white">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-        
-          </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 space-x-10 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-                Resources
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                 
-                </li>
-                <li>
-                 
-                </li>
+              <ul className="text-violet-50 dark:text-gray-400 font-medium">
+                <li className="mb-4">Something</li>
+                <li className="mb-4">Something</li>
+                <li className="mb-4">Something</li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-                Follow us
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                 
-                </li>
-                <li>
-                
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-                Legal
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                 
-                </li>
-                <li>
-                 
-                </li>
+              <ul className="text-violet-50 dark:text-gray-400 font-medium">
+                <li className="mb-4">Something</li>
+                <li className="mb-4">Something</li>
+                <li className="mb-4">Something</li>
               </ul>
             </div>
           </div>
+          <div className="mb-6 md:mb-0">In progress...</div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-         
+        <div className="sm:flex sm:items-center sm:justify-between text-violet-50 mt-5">
+        © 2023 Yevhenii Strilets —— Vancouver, Canada
         </div>
       </div>
     </footer>
