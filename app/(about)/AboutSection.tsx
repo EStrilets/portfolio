@@ -20,11 +20,14 @@ const AboutSection = () => {
         <div className="flex-1">
           <div className="flex flex-col items-start justify-start space-y-4">
             <p className="text-xl font-sans leading-9">
-              I&aposs;ve been building products and digital experiences for the web
-              since 2020. My inexhaustible curiosity and love for web
-              technologies and design led me to attend <br /> <strong className="text-text">Simon Fraser
-              University (SFU)</strong>, where I earned <br /> my Bachelor&aposs; Degree of
-              Science with a major <br /> in Computer Science.
+              I&apos;ve been building products and digital experiences for the
+              web since 2020. My inexhaustible curiosity and love for web
+              technologies and design led me to attend <br />{" "}
+              <strong className="text-text">
+                Simon Fraser University (SFU)
+              </strong>
+              , where I earned <br /> my Bachelor&apos; Degree of Science with
+              a major in Computer Science.
             </p>
             <p className="text-xl font-sans leading-9">
               As my first big project, I gathered a team of 3 developers and
@@ -41,13 +44,14 @@ const AboutSection = () => {
               There I have been working on a delivery app and nd received an
               incredible amount of skills and knowledge starting from setting up
               a component library to participating in extensive standup and code
-              reviews. After Tiggy, I got into the web development agency <strong className="text-text">SEO
-              Soul</strong>, where I developed a Chrome extension for company needs and
-              delivered features to clients' projects.
+              reviews. After Tiggy, I got into the web development agency{" "}
+              <strong className="text-text">SEO Soul</strong>, where I developed
+              a Chrome extension for company needs and delivered features to
+              clients&apos; projects.
             </p>
           </div>
           <p className="text-xl font-sans leading-9">
-            I've worked in various areas of application development, including
+            I&apos;ve worked in various areas of application development, including
             front-end & full-stuck development, Chrome Extension, mobile and app
             UI/UX.
           </p>
@@ -63,7 +67,11 @@ const AboutSection = () => {
         text-violet-50
         "
       >
-        <div></div>
+        <div>
+          <button className="bg-[#262F45] rounded-md border border-solid border-[#7AA0F7]  text-[#5686f5] font-semibold text-sm leading-5 py-3 px-4 text-center glow-on-hover">
+            Work
+          </button>
+        </div>
       </div>
     </div>
   );
