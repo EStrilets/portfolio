@@ -8,7 +8,7 @@ const About = () => {
     <main className="flex flex-col items-center justify-center gap-12">
       <div className="flex flex-col justify-center max-w-4xl space-y-5 mt-[15rem]">
         <p className="font-bold text-4xl leading-relaxed text-violet-50">
-          Hello! Im Yev, a Vancouver 🇨🇦 based space enthusiast 🚀and frontend
+          Hello! I&aposs;m Yev, a Vancouver 🇨🇦 based space enthusiast 🚀and frontend
           engineer 👨‍💻 working with Typescript and React.
         </p>
       </div>

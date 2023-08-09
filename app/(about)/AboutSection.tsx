@@ -20,10 +20,10 @@ const AboutSection = () => {
         <div className="flex-1">
           <div className="flex flex-col items-start justify-start space-y-4">
             <p className="text-xl font-sans leading-9">
-              I've been building products and digital experiences for the web
+              I&aposs;ve been building products and digital experiences for the web
               since 2020. My inexhaustible curiosity and love for web
               technologies and design led me to attend <br /> <strong className="text-text">Simon Fraser
-              University (SFU)</strong>, where I earned <br /> my Bachelor's Degree of
+              University (SFU)</strong>, where I earned <br /> my Bachelor&aposs; Degree of
               Science with a major <br /> in Computer Science.
             </p>
             <p className="text-xl font-sans leading-9">
