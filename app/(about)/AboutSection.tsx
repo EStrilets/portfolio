@@ -10,7 +10,9 @@ const AboutSection = () => {
         font-bold text-3xl
         mt-[3rem]
         text-violet-50
+        scroll-mt-40
         "
+        id="about-section"
       >
         <div>
           <h1>About me</h1>
@@ -52,7 +54,7 @@ const AboutSection = () => {
           </div>
           <p className="text-xl font-sans leading-9">
             I&apos;ve worked in various areas of application development, including
-            front-end & full-stuck development, Chrome Extension, mobile and app
+            front-end & full-stack development, Chrome Extension, mobile and app
             UI/UX.
           </p>
         </div>

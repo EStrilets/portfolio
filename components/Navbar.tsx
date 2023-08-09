@@ -11,6 +11,7 @@ const navList = [
   {
     name: "About",
     link: "/",
+    scrollId: "#about-section",
     id: 1,
   },
   {
@@ -34,6 +35,16 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [isSelected, setSelected] = useState(0);
+
+  const scrollToView = (targetId: string) => (e: any) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 5) {
@@ -140,8 +151,8 @@ const Navbar = () => {
             {navList.map((item) => (
               <Link
                 key={item.id}
-                href={item.link}
-                onClick={() => setSelected(item.id)}
+                href={`#${item.scrollId}`}
+                onClick={scrollToView("about-section")}
               >
                 <TabsTrigger
                   value={item.name}
