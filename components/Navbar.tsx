@@ -94,9 +94,11 @@ const Navbar = () => {
           isSticky ? "pt-1" : "pt-6"
         }`}
       >
-        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-          in Progress...
-        </span>
+        <Link href="/">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+            in Progress...
+          </span>
+        </Link>
         <div
           className={`
           items-center 

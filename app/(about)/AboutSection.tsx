@@ -1,5 +1,15 @@
+"use client"
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const AboutSection = () => {
+  const router = useRouter();
+
+  const handleClick = (destination: string ) => {
+    router.push(destination);
+  };
+
   return (
     <div className="w-full flex flex-col items-center justify-center bg-[#1B263E] gap-8">
       <div
@@ -28,8 +38,8 @@ const AboutSection = () => {
               <strong className="text-text">
                 Simon Fraser University (SFU)
               </strong>
-              , where I earned <br /> my Bachelor&apos; Degree of Science with
-              a major in Computer Science.
+              , where I earned <br /> my Bachelor&apos; Degree of Science with a
+              major in Computer Science.
             </p>
             <p className="text-xl font-sans leading-9">
               As my first big project, I gathered a team of 3 developers and
@@ -53,9 +63,9 @@ const AboutSection = () => {
             </p>
           </div>
           <p className="text-xl font-sans leading-9">
-            I&apos;ve worked in various areas of application development, including
-            front-end & full-stack development, Chrome Extension, mobile and app
-            UI/UX.
+            I&apos;ve worked in various areas of application development,
+            including front-end & full-stack development, Chrome Extension,
+            mobile and app UI/UX.
           </p>
         </div>
       </div>
@@ -70,9 +80,17 @@ const AboutSection = () => {
         "
       >
         <div>
-          <button className="bg-[#262F45] rounded-md border border-solid border-[#7AA0F7]  text-[#5686f5] font-semibold text-sm leading-5 py-3 px-4 text-center glow-on-hover">
-            Work
-          </button>
+            <button
+              className="bg-[#262F45] rounded-md 
+              border border-solid border-[#7AA0F7]  
+              text-[#5686f5] font-semibold text-sm leading-5 
+              py-3 px-4 
+              text-center 
+              glow-on-hover"
+              onClick={() => handleClick("/resume")}
+            >
+              Resume
+            </button>
         </div>
       </div>
     </div>
