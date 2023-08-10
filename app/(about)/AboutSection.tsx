@@ -31,7 +31,7 @@ const AboutSection = () => {
       </div>
       <div className="flex flex-col max-w-4xl md:mb-[3rem] text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
         <div className="flex flex-col md:flex-1">
-          <div className="space-y-4">
+          <div className="space-y-10">
             <p className="text-xl font-sans leading-9">
               I&apos;ve been building products and digital experiences for the
               web since 2020. My inexhaustible curiosity and love for web
@@ -51,7 +51,7 @@ const AboutSection = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col ml-0 space-y-4 items-start justify-start md:flex-1 md:ml-2">
+        <div className="flex flex-col ml-0 space-y-10 items-start justify-start md:flex-1 md:ml-2">
           <div>
             <p className="text-xl font-sans leading-9">
               There I have been working on a delivery app and nd received an

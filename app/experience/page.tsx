@@ -24,13 +24,13 @@ const ExperienceCard:React.FC<ExperienceCardProps> = (props) => {
       id="work-section"
     >
       <div className="space-y-16 mb-[3rem]">
-        <div className="flex items-start space-x-5">
-          <p className="flex items-center h-8 text-sm text-[#87A9F8]">
+        <div className="flex flex-col items-start space-x-5 px-6 md:flex-row md:px-0">
+          <p className="flex items-center h-8 text-sm text-[#87A9F8] ml-[1.2rem] md:ml-0">
             {props.date}
           </p>
           <div className="flex-1 space-y-2">
             <div className="flex items-center justify-between space-x-4 mb-7">
-              <h1>{props.position}</h1>
+              <h1 className='text-2xl md:text-3xl'>{props.position}</h1>
               <h1 className="whitespace-nowrap text-base text-[#5686f5]">
                 {props.company}
               </h1>
@@ -70,10 +70,11 @@ const Experience = () => {
         className="
         flex flex-col 
         w-full max-w-4xl
-        items-start justify-center 
+        items-center justify-center 
         font-bold text-3xl
         mt-[3rem]
         text-violet-50
+        md:items-start
         "
       >
         <div className="mb-6">

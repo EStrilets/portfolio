@@ -42,17 +42,18 @@ const Projects = () => {
         className="
         flex flex-col 
         w-full max-w-4xl
-        items-start justify-center 
+        items-center justify-center 
         font-bold text-3xl
         mt-[3rem]
         text-violet-50
+        md:items-start
         "
       >
         <div className="mb-[2rem]">
           <h1>Projects</h1>
         </div>
       </div>
-        <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 space-x-12 mb-10">
+        <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 space-x-12 mb-10 p-6 md:p-0">
           <div
             className="
           flex-auto 

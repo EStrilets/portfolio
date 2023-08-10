@@ -16,17 +16,17 @@ const About = () => {
   };
   return (
     <main className="flex flex-col items-center justify-center gap-12">
-      <div className="flex flex-col justify-center max-w-4xl space-y-5 mt-[15rem]">
-        <p className="font-bold text-4xl leading-relaxed text-violet-50">
+      <div className="flex flex-col justify-center max-w-4xl space-y-5 mt-[15rem] p-6 md:p-0">
+        <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
           Hello! I&apos;m Yev, a Vancouver 🇨🇦 based space enthusiast 🚀and
           frontend engineer 👨‍💻 working with Typescript and React.
         </p>
       </div>
-      <div className="flex w-full justify-start max-w-4xl mt-[1rem] mb-[6rem] space-x-3">
+      <div className="flex flex-col w-full justify-center items-center max-w-4xl mt-[1rem] mb-[6rem] space-x-0 space-y-6 md:flex-row md:space-y-0 md:justify-start md:space-x-3">
         <Link href="#about-section">
           <button
             onClick={scrollToView("about-section")}
-            className="bg-[#262F45] rounded-md border border-solid border-[#7AA0F7]  text-[#5686f5] font-semibold text-sm leading-5 py-3 px-4 text-center glow-on-hover"
+            className="bg-[#262F45] w-[325px] rounded-md border border-solid border-[#7AA0F7]  text-[#5686f5] font-semibold text-sm leading-5 py-3 px-4 text-center glow-on-hover md:w-auto"
           >
             About me
           </button>
@@ -38,7 +38,9 @@ const About = () => {
               border border-solid border-[#7AA0F7]  
               text-[#5686f5] font-semibold text-sm leading-5 
               py-3 px-4 
-              text-center 
+              text-center
+              w-[325px]
+              md:w-auto
               glow-on-hover">
             Work
           </button>

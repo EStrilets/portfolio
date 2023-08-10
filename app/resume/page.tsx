@@ -4,7 +4,7 @@ const PDFPage: React.FC = () => {
   const pdfUrl = "/yevhenii_strilets_resume2023.pdf"; // Update this with the actual path to your PDF file
 
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-8 md:h-[90rem] sm:h-[40rem]">
+    <div className="w-full flex flex-col items-center justify-center gap-8 md:h-[90rem] h-screen">
       <div
         className="
         flex flex-col 
