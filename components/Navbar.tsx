@@ -136,6 +136,7 @@ const Navbar = () => {
               md:space-x-8 md:mt-0 md:border-0
               `}
           >
+            {/* TODO:Fix link issues */}
             {navList.map((item) => (
               <Link key={item.id} href={item.link ? item.link : ""}>
                 <TabsTrigger

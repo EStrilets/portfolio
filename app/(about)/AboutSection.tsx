@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const AboutSection = () => {
   const router = useRouter();
 
-  const handleClick = (destination: string ) => {
+  const handleClick = (destination: string) => {
     router.push(destination);
   };
 
@@ -16,11 +15,13 @@ const AboutSection = () => {
         className="
         flex flex-col 
         w-full max-w-4xl
-        items-start justify-center 
+        items-center  
+        justify-center 
         font-bold text-3xl
         mt-[3rem]
         text-violet-50
         scroll-mt-40
+        md:items-start 
         "
         id="about-section"
       >
@@ -28,9 +29,9 @@ const AboutSection = () => {
           <h1>About me</h1>
         </div>
       </div>
-      <div className="flex max-w-4xl mb-[3rem] text-violet-50 space-x-8">
-        <div className="flex-1">
-          <div className="flex flex-col items-start justify-start space-y-4">
+      <div className="flex flex-col max-w-4xl md:mb-[3rem] text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
+        <div className="flex flex-col md:flex-1">
+          <div className="space-y-4">
             <p className="text-xl font-sans leading-9">
               I&apos;ve been building products and digital experiences for the
               web since 2020. My inexhaustible curiosity and love for web
@@ -50,7 +51,7 @@ const AboutSection = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1 ml-2 space-y-4 items-start justify-start">
+        <div className="flex flex-col ml-0 space-y-4 items-start justify-start md:flex-1 md:ml-2">
           <div>
             <p className="text-xl font-sans leading-9">
               There I have been working on a delivery app and nd received an
@@ -77,21 +78,24 @@ const AboutSection = () => {
         font-bold text-3xl
         mb-[3rem]
         text-violet-50
+        p-6
+        md:p-0
         "
       >
-        <div>
-            <button
-              className="bg-[#262F45] rounded-md 
+          <button
+            className="bg-[#262F45] rounded-md 
               border border-solid border-[#7AA0F7]  
               text-[#5686f5] font-semibold text-sm leading-5 
               py-3 px-4 
               text-center 
-              glow-on-hover"
-              onClick={() => handleClick("/resume")}
-            >
-              Resume
-            </button>
-        </div>
+              glow-on-hover
+              w-full
+              md:w-fit
+              "
+            onClick={() => handleClick("/resume")}
+          >
+            Resume
+          </button>
       </div>
     </div>
   );
