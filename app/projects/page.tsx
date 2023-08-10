@@ -1,5 +1,9 @@
 "use client";
 
+interface ProjectCardProps { 
+  
+}
+
 const ProjectCard = () => {
   return (
     <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 space-x-12 mt-10">

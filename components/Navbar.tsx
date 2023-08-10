@@ -11,22 +11,20 @@ const navList = [
   {
     name: "About",
     link: "/",
-    scrollId: "#about-section",
     id: 1,
   },
   {
-    name: "Experience",
-    link: "/experience",
-    id: 3,
-  },
-  {
-    name: "Projects",
-    link: "/projects",
+    name: "Resume",
+    link: "/resume",
     id: 2,
   },
   {
     name: "Contact",
     link: "/contact",
+    id: 3,
+  },
+  {
+    name: "Blog",
     id: 4,
   },
 ];
@@ -35,16 +33,6 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [isSelected, setSelected] = useState(0);
-
-  const scrollToView = (targetId: string) => (e: any) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   const handleScroll = () => {
     if (window.scrollY > 5) {
@@ -151,11 +139,7 @@ const Navbar = () => {
               `}
           >
             {navList.map((item) => (
-              <Link
-                key={item.id}
-                href={`#${item.scrollId}`}
-                onClick={scrollToView("about-section")}
-              >
+              <Link key={item.id} href={item.link ? item.link : ""}>
                 <TabsTrigger
                   value={item.name}
                   className={`
@@ -167,6 +151,11 @@ const Navbar = () => {
                 `}
                 >
                   {item.name}
+                  {item.name === "Blog" ? (
+                    <h1 className="text-sm mt-3 ml-1">soon...</h1>
+                  ) : (
+                    ""
+                  )}
                 </TabsTrigger>
               </Link>
             ))}

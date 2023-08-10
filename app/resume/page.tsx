@@ -7,7 +7,7 @@ const PDFPage: React.FC = () => {
     <div className="w-full h-[90rem] flex flex-col items-center justify-center gap-8">
       {/* <h1>PDF Viewer Example</h1>
       <PDFViewer pdfUrl={pdfUrl} /> */}
-      <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 space-x-12 mb-10 mt-[10rem]">
+      <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 mb-2 mt-[12rem]">
         <iframe src="/yevhenii_strilets_resume2023.pdf"  height="100%" width="100%" />
       </div>
     </div>
