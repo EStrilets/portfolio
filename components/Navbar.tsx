@@ -97,18 +97,16 @@ const Navbar = () => {
           md:w-auto 
           md:order-2 
           px-10 py-[1rem] mt-1
-          backdrop-blur-lg
-          rounded-lg
           transition-all duration-300 ease-in-out
           space-x-6
           `}
         >
-          <div className="flex justify-center items-center rounded-lg bg-[#1B263E] h-12 w-12 glow-on-hover">
+          <div className="flex justify-center items-center rounded-md bg-[#1B263E] h-12 w-12 glow-on-hover">
             <Link href="https://github.com/EStrilets" target="_blank">
               <BsGithub size={30} color="#f5f3ff" />
             </Link>
           </div>
-          <div className="flex justify-center items-center rounded-lg bg-[#1B263E] h-12 w-12 glow-on-hover">
+          <div className="flex justify-center items-center rounded-md bg-[#1B263E] h-12 w-12 glow-on-hover">
             <Link
               href="https://www.linkedin.com/in/yev-strilets/"
               target="_blank"
