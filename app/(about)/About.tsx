@@ -45,6 +45,20 @@ const About = () => {
             Work
           </button>
         </Link>
+        <Link href="#work-section">
+          <button 
+            onClick={scrollToView("work-section")}
+            className="bg-[#262F45] rounded-md 
+              border border-solid border-[#7AA0F7]  
+              text-[#5686f5] font-semibold text-sm leading-5 
+              py-3 px-4 
+              text-center
+              w-[325px]
+              md:w-auto
+              glow-on-hover">
+            Projects
+          </button>
+        </Link>
       </div>
       <AboutSection />
       <Experience />
