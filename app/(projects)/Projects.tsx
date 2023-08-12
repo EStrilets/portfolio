@@ -37,7 +37,7 @@ const ProjectCard = () => {
 
 const Projects = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-8">
+    <div className="w-full flex flex-col items-center justify-center gap-8 scroll-mt-20" id="projects-section">
       <div
         className="
         flex flex-col 

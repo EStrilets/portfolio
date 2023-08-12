@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import Experience from "../experience/page";
-import Projects from "../projects/page";
+import Projects from "../(projects)/Projects";
 import AboutSection from "./AboutSection";
+import Experience from "../(experience)/Experience";
 
 const About = () => {
   const scrollToView = (targetId: string) => (e: any) => {
@@ -45,9 +45,9 @@ const About = () => {
             Work
           </button>
         </Link>
-        <Link href="#work-section">
+        <Link href="#projects-section">
           <button 
-            onClick={scrollToView("work-section")}
+            onClick={scrollToView("projects-section")}
             className="bg-[#262F45] rounded-md 
               border border-solid border-[#7AA0F7]  
               text-[#5686f5] font-semibold text-sm leading-5 

@@ -18,7 +18,7 @@ export const data = {
             borderColor: '#1B263E',
             borderWidth: 1,
             datalabels: {
-              //  formatter: (value, context) => value + '%',
+                formatter: (value: any, context:any ) => value + '%',
                color: "#1B263E",
                display: true
             },
@@ -66,9 +66,18 @@ export const data = {
       },
     };
 
+    const total = data.datasets[0].data.reduce((sum, value) => sum + value, 0);
+    data.datasets[0].data = data.datasets[0].data.map(
+      (value) => (value / total) * 500
+    );
+
     return (
       <div className="flex flex-col w-auto h-auto">
-        <PolarArea data={data} options={options} className="w-[22rem] h-[22rem]" />
+        <PolarArea
+          data={data}
+          options={options}
+          className="w-[22rem] h-[22rem]"
+        />
       </div>
     );
   }
