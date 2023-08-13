@@ -72,7 +72,7 @@ export const data = {
         <PolarArea
           data={data}
           options={options}
-          className="w-[22rem] h-[22rem]"
+          className="w-[23rem] h-[23rem]"
         />
       </div>
     );

@@ -1,6 +1,6 @@
 "use client";
-import TechStackChartSEO from '@/components/charts/TechStackChartSEO';
-import TechStackChartTiggy from '@/components/charts/TechStackChartTiggy';
+import TechStackChartSEO from '@/app/components/charts/TechStackChartSEO';
+import TechStackChartTiggy from '@/app/components/charts/TechStackChartTiggy';
 import experience from '@/data/experience'
 import React from 'react';
 
