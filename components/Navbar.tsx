@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { BsGithub } from "react-icons/bs";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import Image from "next/image";
 
 const navList = [
   {
@@ -83,9 +84,7 @@ const Navbar = () => {
         }`}
       >
         <Link href="/">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            in Progress...
-          </span>
+          <Image src='/logo.svg' alt="logo" width={40} height={40} />
         </Link>
         <div
           className={`

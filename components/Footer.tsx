@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -27,7 +28,9 @@ const Footer = () => {
                   </li>
                 </Link>
                 <Link href="/resume">
-                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Resume</li>
+                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">
+                    Resume
+                  </li>
                 </Link>
                 <Link href="/contact">
                   <li className="mb-4 cursor-pointer">Contact</li>
@@ -48,7 +51,11 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="mb-6 md:mb-0">In progress...</div>
+          <div className="mb-6 md:mb-0">
+            <Link href="/">
+              <Image src="/logo.svg" alt="logo" width={40} height={40} />
+            </Link>
+          </div>
         </div>
         <div className="sm:flex sm:items-center sm:justify-between text-violet-50 mt-5">
           © 2023 Yevhenii Strilets —— Vancouver, Canada
