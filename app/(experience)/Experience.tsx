@@ -1,5 +1,6 @@
 "use client";
-import TechStackChart from '@/components/TechStackChart';
+import TechStackChartSEO from '@/components/charts/TechStackChartSEO';
+import TechStackChartTiggy from '@/components/charts/TechStackChartTiggy';
 import experience from '@/data/experience'
 import React from 'react';
 
@@ -62,7 +63,7 @@ const ExperienceCard:React.FC<ExperienceCardProps> = (props) => {
       </div>
       <div className="flex-1 text-2xl ml-[7.5rem]">
         <h1>Tech Stack</h1>
-        <TechStackChart />
+        {props.company === 'SEO Soul' ? <TechStackChartSEO /> : <TechStackChartTiggy />}
       </div>
     </div>
   );
