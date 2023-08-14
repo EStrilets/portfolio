@@ -16,7 +16,7 @@ const About = () => {
   };
   return (
     <main className="flex flex-col items-center justify-center gap-12">
-      <div className="flex flex-col justify-center max-w-4xl space-y-5 mt-[15rem] p-6 md:p-0">
+      <div className="flex flex-col justify-center max-w-4xl space-y-5 mt-[8rem] md:mt-[15rem] p-6 md:p-0">
         <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
           Hello! I&apos;m Yev, a Vancouver 🇨🇦 based space enthusiast 🚀and
           frontend engineer 👨‍💻 working with Typescript and React.

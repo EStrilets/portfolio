@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsGithub } from "react-icons/bs";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 
 const navList = [
@@ -34,6 +35,8 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isSticky, setIsSticky] = useState(false);
   const [isSelected, setSelected] = useState(0);
+
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 5) {
@@ -76,23 +79,25 @@ const Navbar = () => {
         backdrop-filter backdrop-blur-sm bg-opacity-50
         transition-all duration-300 ease-in-out
         bg-[#141B2D] border-b-[0.5px] border-[#1E2A45]
-        ${isSticky ? "h-[6rem]" : " h-[8rem]"}`}
+        ${isSticky ? "h-[6rem]" : "h-[6rem] md:h-[8rem]"}`}
     >
       <div
         className={`max-w-4xl flex flex-wrap items-center justify-between mx-auto transition-all duration-300 ease-in-out ${
-          isSticky ? "pt-1" : "pt-6"
+          isSticky ? "pt-2 md:pt-1" : "pt-2 md:pt-6"
         }`}
       >
         <Link href="/">
-          <Image src='/logo.svg' alt="logo" width={40} height={40} />
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            width={40}
+            height={40}
+            className="ml-8 md:ml-0"
+          />
         </Link>
         <div
           className={`
-          items-center 
-          justify-between 
-          hidden 
-          w-full 
-          md:flex 
+          flex 
           md:w-auto 
           md:order-2 
           px-10 py-[1rem] mt-1
@@ -113,23 +118,31 @@ const Navbar = () => {
               <BiLogoLinkedin size={30} color="#0077b5" />
             </Link>
           </div>
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-          </button>
+        </div>
+        <div className="flex md:hidden">
+          {mobileMenu ? (
+            <HiOutlineX
+              size={30}
+              color="#f5f3ff"
+              onClick={() => setMobileMenu(false)}
+            />
+          ) : (
+            <HiMenuAlt3
+              size={30}
+              color="#f5f3ff"
+              onClick={() => setMobileMenu(true)}
+            />
+          )}
         </div>
 
         <Tabs defaultValue="account">
           <TabsList
             className={`
-              flex 
+              md:flex 
               flex-col 
               md:p-0 
               mt-4 
+              hidden
               bg-transparent 
               md:flex-row 
               md:space-x-8 md:mt-0 md:border-0
@@ -160,6 +173,34 @@ const Navbar = () => {
           </TabsList>
         </Tabs>
       </div>
+      {mobileMenu && (
+        <div
+          className="
+          flex flex-col bg-[#090D14] 
+          transition-all 
+          duration-300 ease-in-out w-full 
+          justify-center items-center p-6 mr-4 space-y-6 md:hidden
+          border-y-[0.5px] border-[#1E2A45]
+          "
+        >
+          {navList.filter((item) => item.name !== 'Blog').map((item) => (
+            <Link key={item.id} href={item.link ? item.link : ""}>
+              <button
+               onClick={() => setMobileMenu(false)}
+               className="bg-[#262F45] rounded-md 
+               border border-solid border-[#7AA0F7]  
+               text-[#5686f5] font-semibold text-sm leading-5 
+               py-3 px-4 
+               text-center
+               w-[325px]
+               md:w-auto"
+              >
+                {item.name}
+              </button>
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

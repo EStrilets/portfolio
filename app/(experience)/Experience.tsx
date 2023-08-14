@@ -1,17 +1,17 @@
 "use client";
-import TechStackChartSEO from '@/components/charts/TechStackChartSEO';
-import TechStackChartTiggy from '@/components/charts/TechStackChartTiggy';
-import experience from '@/data/experience'
-import React from 'react';
+import TechStackChartSEO from "@/app/components/charts/TechStackChartSEO";
+import TechStackChartTiggy from "@/app/components/charts/TechStackChartTiggy";
+import experience from "@/data/experience";
+import React from "react";
 
-interface ExperienceCardProps { 
-  position?: string,
-  company?: string,
-  date?: string,
-  description?: string,
-  headerPoints?: { header: string, body: string }[]; 
+interface ExperienceCardProps {
+  position?: string;
+  company?: string;
+  date?: string;
+  description?: string;
+  headerPoints?: { header: string; body: string }[];
 }
-const ExperienceCard:React.FC<ExperienceCardProps> = (props) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = (props) => {
   return (
     <div
       className="
@@ -61,9 +61,16 @@ const ExperienceCard:React.FC<ExperienceCardProps> = (props) => {
           </div>
         </div>
       </div>
-      <div className="flex-1 text-2xl ml-[7.5rem]">
-        <h1>Tech Stack</h1>
-        {props.company === 'SEO Soul' ? <TechStackChartSEO /> : <TechStackChartTiggy />}
+      <div className="flex-1 text-2xl ml-1 md:ml-[7.5rem]">
+        <h1 className="ml-8 md:ml-0">Tech Stack</h1>
+        {props.company === "SEO Soul" ? (
+          <div className="ml-2 md:ml-0">
+            {" "}
+            <TechStackChartSEO />{" "}
+          </div>
+        ) : (
+          <TechStackChartTiggy />
+        )}
       </div>
     </div>
   );

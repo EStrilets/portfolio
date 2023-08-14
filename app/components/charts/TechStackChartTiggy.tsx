@@ -10,11 +10,11 @@ import {
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const data = {
-    labels: ["JavaScript", "TypeScript", "React Native", "Redux", "Go lang", "REST API", "PostgreSQL", "Git"],
+    labels: ["JavaScript", "TypeScript", "Go lang", "REST API", "React Native", "Redux", "Git", "PostgreSQL"],
     datasets: [
         {
-            data: [72, 31, 71, 44, 34, 55, 51, 50],
-            backgroundColor: ["rgba(240, 219, 79, 1)", "rgba(0, 122, 204, 1)", "rgba(97, 219, 251, 1)", "rgba(225, 0, 152, 1)", "rgba(240, 101, 41, 1)", "rgba(38, 77, 228, 1)", "rgba(255, 255, 255, 1)", "rgba(215, 92, 156, 1)"],
+            data: [72, 31, 43, 55, 71, 44, 50, 51],
+            backgroundColor: ["rgba(240, 219, 79, 1)", "rgba(0, 122, 204, 1)", "rgba(240, 101, 41, 1)", "rgba(225, 0, 152, 1)", "rgba(97, 219, 251, 1)", "rgba(38, 77, 228, 1)", "rgba(255, 255, 255, 1)", "rgba(215, 92, 156, 1)"],
             borderColor: '#1B263E',
             borderWidth: 1,
             datalabels: {
@@ -72,7 +72,7 @@ export const data = {
         <PolarArea
           data={data}
           options={options}
-          className="w-[22rem] h-[22rem]"
+          className="w-[23rem] h-[23rem]"
         />
       </div>
     );
