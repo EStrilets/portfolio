@@ -10,7 +10,8 @@ const Contact = () => {
         w-full max-w-4xl
         items-center justify-center 
         font-bold text-3xl
-        mt-[12rem]
+        mt-[8rem]
+        md:mt-[12rem]
         text-violet-50
         md:items-start
         "

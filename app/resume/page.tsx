@@ -1,5 +1,3 @@
-import PDFViewer from "@/components/PDFViewer";
-
 const PDFPage: React.FC = () => {
   const pdfUrl = "/yevhenii_strilets_resume2023.pdf"; // Update this with the actual path to your PDF file
 
@@ -11,7 +9,8 @@ const PDFPage: React.FC = () => {
         w-full max-w-4xl
         items-start justify-center 
         font-bold text-3xl
-        mt-[12rem]
+        mt-[8rem]
+        md:mt-[12rem]
         text-violet-50
         scroll-mt-40
         "
@@ -23,8 +22,7 @@ const PDFPage: React.FC = () => {
       <div className="flex flex-row z-10 w-full max-w-4xl items-start justify-between m-2 flex-1 mb-2">
         <iframe
           src="/yevhenii_strilets_resume2023.pdf"
-          height="100%"
-          width="100%"
+          className="w-full h-full border-0"
         />
       </div>
     </div>
