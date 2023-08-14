@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   console.log(bgColor);
   return (
-    <div className="flex flex-col w-full max-w-4xl p-6 md:p-0">
+    <div className="flex flex-col w-full max-w-4xl p-6 md:p-0 mb-4">
       <div className="flex flex-row z-10 m-2 flex-1 space-x-12 mt-10">
         <div
           style={inlineStyle}
@@ -61,9 +61,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start justify-start mt-12 text-violet-50">
+      <div className="flex flex-col items-start justify-start mt-8 text-violet-50">
         <h1 className="text-4xl font-semibold font-sans">{title}</h1>
-        <h2 className="text-2xl font-semibold font-sans">
+        <h2 className="text-xl font-sans">
           {description}
         </h2>
       </div>
