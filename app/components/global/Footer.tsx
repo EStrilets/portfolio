@@ -40,13 +40,13 @@ const Footer = () => {
             <div>
               <ul className="text-violet-50 dark:text-gray-400 font-medium">
                 <Link href="https://github.com/EStrilets" target="_blank">
-                  <li className="mb-4 cursor-pointer">Github</li>
+                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Github</li>
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/yev-strilets/"
                   target="_blank"
                 >
-                  <li className="mb-4 cursor-pointer">Linkedin</li>
+                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Linkedin</li>
                 </Link>
               </ul>
             </div>

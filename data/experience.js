@@ -3,7 +3,8 @@ const experience = [
         id: 1,
         position: "Web Developer",
         company: "SEO Soul",
-        date: "Feb-July 2022",
+        date: "Feb-July 2023",
+        type: "Contract",
         description: "I undertook the position of a web developer, where my primary responsibilities " +
             "included the development and deployment of various features for clients' projects. " +
             "I closely collaborated with a team of 3 developer developers and a talented designer. " +
@@ -27,6 +28,7 @@ const experience = [
         id: 2,
         position: "Junior Software Developer",
         company: "Tiggy",
+        type: "Full-time ",
         date: "Feb-Aug 2022",
         description: "At Tiggy, I held the role of a junior " +
             "software developer focused on the grocery delivery sector. I contributed and developed real-time " +

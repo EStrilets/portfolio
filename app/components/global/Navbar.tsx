@@ -17,7 +17,7 @@ const navList = [
   },
   {
     name: "Resume",
-    link: "/resume",
+    link: "/yevhenii_strilets_resume2023.pdf",
     id: 2,
   },
   {
@@ -150,13 +150,13 @@ const Navbar = () => {
           >
             {/* TODO:Fix link issues */}
             {navList.map((item) => (
-              <Link key={item.id} href={item.link ? item.link : ""}>
+              <Link key={item.id} href={item.link ? item.link : ""} target={item.name === 'Resume' ? 'blank' : ''}>
                 <TabsTrigger
                   value={item.name}
                   className={`
                  text-violet-50
                 ${isSelected === item.id ? "text-text" : "bg-transparent"} 
-                text-lg
+                text-base
                 rounded-lg
                 transition-all duration-100 ease-in-out
                 `}

@@ -10,6 +10,7 @@ interface ExperienceCardProps {
   date?: string;
   description?: string;
   headerPoints?: { header: string; body: string }[];
+  type?: string
 }
 const ExperienceCard: React.FC<ExperienceCardProps> = (props) => {
   return (
@@ -27,15 +28,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = (props) => {
     >
       <div className="space-y-16 mb-[3rem]">
         <div className="flex flex-col items-start space-x-5 px-6 md:flex-row md:px-0">
-          <p className="flex items-center h-8 text-sm text-[#87A9F8] ml-[1.2rem] md:ml-0">
-            {props.date}
-          </p>
-          <div className="flex-1 space-y-2">
-            <div className="flex items-center justify-between space-x-4 mb-7">
-              <h1 className="text-2xl md:text-3xl">{props.position}</h1>
-              <h1 className="whitespace-nowrap text-base text-[#5686f5]">
-                {props.company}
-              </h1>
+          <div className="flex-1 space-y-2 pr-4">
+            <div className="flex items-center justify-between space-x-4 mb-7 text-[#87A9F8]">
+              <h1 className="text-2xl md:text-2xl">{props.company}</h1>
             </div>
             <div>
               <p className="text-lg leading-9 font-medium mb-6">
@@ -59,9 +54,20 @@ const ExperienceCard: React.FC<ExperienceCardProps> = (props) => {
               ))}
             </div>
           </div>
+          <div>
+            <p className="flex items-center h-16 text-2xl text-[#87A9F8] ml-[1.2rem] md:ml-0 w-[14rem]">
+              {props.position}
+            </p>
+            <p className="flex items-center h-8 text-base text-violet-50 ml-[1.2rem] mt-4 md:ml-0">
+              {props.date}
+            </p>
+            <p className="flex items-center h-8 text-base text-violet-50 ml-[1.2rem] md:ml-0">
+              {props.type}
+            </p>
+          </div>
         </div>
       </div>
-      <div className="flex-1 text-2xl ml-1 md:ml-[7.5rem]">
+      <div className="flex-1 text-2xl ml-1 md:ml-[2rem]">
         <h1 className="ml-8 md:ml-0">Tech Stack</h1>
         {props.company === "SEO Soul" ? (
           <div className="ml-2 md:ml-0">

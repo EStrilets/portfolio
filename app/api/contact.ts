@@ -19,7 +19,7 @@ export default async function handler(
     const msg = `Name: ${name}\r\n Email: ${email}\r\n Message: ${message}`;
     const data = {
       to: "yevstrilets@gmail.com",
-      from: "eugenearcher3@gmail.com",
+      from: "yevstrilets@gmail.com",
       subject: `${name.toUpperCase()} sent you a message from Contact Form`,
       text: `Email => ${email}`,
       html: msg.replace(/\r\n/g, "<br>"),

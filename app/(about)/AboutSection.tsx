@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const AboutSection = () => {
@@ -82,6 +83,7 @@ const AboutSection = () => {
         md:p-0
         "
       >
+        <Link href="/yevhenii_strilets_resume2023.pdf" target="blank">
           <button
             className="bg-[#262F45] rounded-md 
               border border-solid border-[#7AA0F7]  
@@ -92,10 +94,10 @@ const AboutSection = () => {
               w-full
               md:w-fit
               "
-            onClick={() => handleClick("/resume")}
           >
             Resume
           </button>
+        </Link>
       </div>
     </div>
   );
