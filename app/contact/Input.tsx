@@ -17,7 +17,7 @@ const Input = ({
 }: InputProps) => {
   return (
     <div className="mt-4 block">
-      <label className="mb-3 block" htmlFor={id}>
+      <label className="block mb-2 text-sm font-medium text-text dark:text-gray-300" htmlFor={id}>
         {label}
       </label>
       <input
@@ -26,7 +26,7 @@ const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        className="block w-full rounded-md border-gray-400 py-3 pl-7 pr-12 focus:border-gray-500 sm:text-sm"
+        className="shadow-sm bg-[#262F45] border border-main focus:border focus:bg-[#303B58] focus:border-[#7AA0F7] text-text text-sm rounded-md focus:outline-none block w-full p-2.5"
       />
       {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}
     </div>

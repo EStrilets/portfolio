@@ -18,37 +18,11 @@
 //     },
 //   });
 
-//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     const errors = validate(values);
-//     if (errors && Object.keys(errors).length > 0) {
-//       return setErrors(errors);
-//     }
-//     setErrors({});
-//     setLoading(true);
-//     axios
-//       .post("/api/mail", {
-//         name: values.name,
-//         email: values.email,
-//         message: values.message,
-//       })
-//       .then((res) => {
-//         if (res.status === 200) {
-//           setValues({ name: "", email: "", message: "" });
-//           setLoading(false);
-//           setSuccess(true);
-//           setMessageState(res.data.message);
-//         } else {
-//           setLoading(false);
-//           setMessageState(res.data.message);
-//         }
-//       })
-//       .catch((err) => {
-//         setLoading(false);
-//         setMessageState(String(err.message));
-//       });
-//     setLoading(false);
-//   };
+//   function onSubmit(values: z.infer<typeof formSchema>) {
+//     // Do something with the form values.
+//     // ✅ This will be type-safe and validated.
+//     console.log(values);
+//   }
 
 //   return (
 //     <div>
@@ -132,37 +106,36 @@
 //             placeholder="Leave a comment..."
 //           ></textarea>
 //         </div>
-//         <button
-//           className="bg-[#262F45] rounded-md 
-//               border border-solid border-[#7AA0F7]  
-//               text-[#5686f5] font-semibold text-sm leading-5 
-//               py-3 px-4 
-//               text-center 
-//               glow-on-hover
-//               w-full"
-//         >
-//           Send message
-//         </button>
+        // <button
+        //   className="bg-[#262F45] rounded-md 
+        //       border border-solid border-[#7AA0F7]  
+        //       text-[#5686f5] font-semibold text-sm leading-5 
+        //       py-3 px-4 
+        //       text-center 
+        //       glow-on-hover
+        //       w-full"
+        // >
+        //   Send message
+        // </button>
 //       </form>
 //     </div>
 //   );
 // };
 
 // export default ContactForm;
+
 import axios from "axios";
 import { useState } from "react";
 import { RiLoader5Fill } from "react-icons/ri";
 import { validate } from "../../utils/validate";
 import Input from "./Input";
 import TextArea from "./TextArea";
-
 interface IValues {
   name: string;
   email: string;
   message: string;
 }
 interface IErrors extends Partial<IValues> {}
-
 const ContactForm = () => {
   const [values, setValues] = useState({
     name: "",
@@ -182,7 +155,7 @@ const ContactForm = () => {
     setErrors({});
     setLoading(true);
     axios
-      .post("/api/mail", {
+      .post("/api/contact", {
         name: values.name,
         email: values.email,
         message: values.message,
@@ -215,7 +188,7 @@ const ContactForm = () => {
     }));
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="space-y-8">
       <Input
         value={values.name}
         onChange={handleChange}
@@ -247,12 +220,18 @@ const ContactForm = () => {
         errorMessage={!!errors.message ? errors.message : ""}
       />
       <button
-        className="mt-4 w-full rounded-md bg-blue-600 py-3 px-5 text-lg text-white outline-none hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-opacity-60"
+        className="bg-[#262F45] rounded-md 
+              border border-solid border-[#7AA0F7]  
+              text-[#5686f5] font-semibold text-sm leading-5 
+              py-3 px-4 
+              text-center 
+              glow-on-hover
+              w-full"
         type="submit"
         disabled={loading}
       >
         {loading !== true ? (
-          "SUBMIT"
+          "Submit message"
         ) : (
           <div className="flex h-full w-full items-center justify-center ">
             <RiLoader5Fill className="h-8 w-8 animate-spin" />
@@ -270,4 +249,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm
+export default ContactForm;

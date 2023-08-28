@@ -23,7 +23,7 @@ const About = () => {
         </p>
         <div className="flex flex-row">
           <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
-           🚀and 
+           enthusiast 🚀and 
         </p>
         <p className="flex items-center font-bold text-4xl text-violet-50">
           <span className="relative ml-3 h-[1.05em] w-96 overflow-hidden">
@@ -34,11 +34,10 @@ const About = () => {
             Full-stack Developer 
             </span>
           </span>
-          working with
         </p>
         </div>
         <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
-        Typescript and React.
+        working with Typescript and React.
         </p>
       </div>
       <div className="flex flex-col w-full justify-center items-center max-w-4xl mt-[1rem] mb-[6rem] space-x-0 space-y-6 md:flex-row md:space-y-0 md:justify-start md:space-x-3">

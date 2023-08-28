@@ -18,7 +18,7 @@ const TextArea = ({
 }: TextAreaProps) => {
   return (
     <div className="mt-4 block">
-      <label className="mb-3 block" htmlFor={id}>
+      <label className="block mb-2 text-sm font-medium text-text" htmlFor={id}>
         {label}
       </label>
       <textarea
@@ -27,7 +27,7 @@ const TextArea = ({
         name={name}
         rows={5}
         placeholder={placeholder}
-        className="block w-full resize-none rounded-md border border-gray-400 pl-7 pr-12 shadow-sm focus:border-gray-500 sm:text-sm"
+        className="block p-2.5 w-full text-sm text-text bg-[#262F45] rounded-md border border-main focus:border focus:border-[#7AA0F7] focus:outline-none focus:bg-[#303B58]"
       ></textarea>
       {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}
     </div>
