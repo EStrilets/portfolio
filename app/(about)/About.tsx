@@ -23,15 +23,17 @@ const About = () => {
         </p>
         <div className="flex flex-row">
           <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
-           enthusiast 🚀and 
+           enthusiast 🚀and <p className="md:hidden">
+            Frontend Developer
+           </p>
         </p>
-        <p className="flex items-center font-bold text-4xl text-violet-50">
+        <p className="md:flex items-center font-bold text-4xl text-violet-50 hidden">
           <span className="relative ml-3 h-[1.05em] w-96 overflow-hidden">
             <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white">
-              Frontend Developer 
+              <p className="text-text"> Frontend Developer </p>
             </span>
             <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:3.5s]">
-            Full-stack Developer 
+            <p className="text-text"> Full-stack Developer  </p>
             </span>
           </span>
         </p>
