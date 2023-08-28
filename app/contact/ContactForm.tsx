@@ -130,6 +130,7 @@ import { RiLoader5Fill } from "react-icons/ri";
 import { validate } from "../../utils/validate";
 import Input from "./Input";
 import TextArea from "./TextArea";
+import toast from "react-hot-toast";
 interface IValues {
   name: string;
   email: string;
@@ -166,14 +167,17 @@ const ContactForm = () => {
           setLoading(false);
           setSuccess(true);
           setMessageState(res.data.message);
+          toast.success("Your message was sent. I'll be in contact shortly.")
         } else {
           setLoading(false);
           setMessageState(res.data.message);
+          toast.custom(res.data.message)
         }
       })
       .catch((err) => {
         setLoading(false);
         setMessageState(String(err.message));
+        toast.error(err.message)
       });
     setLoading(false);
   };
@@ -238,13 +242,6 @@ const ContactForm = () => {
           </div>
         )}
       </button>
-      <p className="mt-5 text-green-500 dark:text-green-500">
-        {success !== false ? (
-          messageState
-        ) : (
-          <span className="text-red-500 dark:text-red-500">{messageState}</span>
-        )}
-      </p>
     </form>
   );
 };

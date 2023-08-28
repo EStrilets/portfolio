@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './components/global/Navbar'
 import Footer from './components/global/Footer'
 import { Analytics } from '@vercel/analytics/react';
+import ToasterContext from './context/ToasterContext'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar/>
+        <ToasterContext />
         {children}
         <Footer/>
         <Analytics />
