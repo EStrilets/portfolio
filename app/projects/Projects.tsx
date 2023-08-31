@@ -22,7 +22,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     background: `${bgColor}`,
   };
 
-  console.log(bgColor);
   return (
     <div className="flex flex-col w-full max-w-4xl p-6 md:p-0 mb-4">
       <Link href={`/projects/${link}`}>
@@ -38,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rounded-2xl 
             text-sky-900
             md:hover:translate-y-[-5px]
-            md:hover:scale-105 
+            md:hover:scale-95 
             hover:drop-shadow-3xl
             transition  
             duration-500
