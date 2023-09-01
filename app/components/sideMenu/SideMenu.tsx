@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 const SideMenu = () => {
@@ -26,15 +26,18 @@ const SideMenu = () => {
       const sensitivityOffset = 900;
       const sections = [
         "about-section",
-        "work-section", 
+        "work-section",
         "projects-section",
-        "another-hello-section",
+        "education-section",
       ];
       for (const sectionId of sections) {
         const sectionElement = document.getElementById(sectionId);
         if (sectionElement) {
           const rect = sectionElement.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom + sensitivityOffset >= window.innerHeight / 2) {
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom + sensitivityOffset >= window.innerHeight / 2
+          ) {
             setMenuItem(sectionId);
             break;
           }
@@ -68,10 +71,11 @@ const SideMenu = () => {
       <div className="flex flex-col justify-center items-start space-y-6 border-l-[2.5px] border-[#1E2A45] p-3">
         <button
           onClick={scrollToView("about-section")}
-          className={`${isMenuItem === "about-section" ? "text-text" : "text-violet-50"} transition duration-300 ease-in-out`}
+          className={`${
+            isMenuItem === "about-section" ? "text-text" : "text-violet-50"
+          } transition duration-300 ease-in-out`}
         >
-          {" "}
-          About{" "}
+          About
         </button>
         <button
           onClick={scrollToView("work-section")}
@@ -79,8 +83,15 @@ const SideMenu = () => {
             isMenuItem === "work-section" ? "text-text" : "text-violet-50"
           } transition duration-300 ease-in-out`}
         >
-          {" "}
-          Experience{" "}
+          Experience
+        </button>
+        <button
+          onClick={scrollToView("education-section")}
+          className={`${
+            isMenuItem === "education-section" ? "text-text" : "text-violet-50"
+          } transition duration-300 ease-in-out`}
+        >
+          Education
         </button>
         <button
           onClick={scrollToView("projects-section")}
@@ -88,33 +99,11 @@ const SideMenu = () => {
             isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
           } transition duration-300 ease-in-out`}
         >
-          {" "}
-          Projects{" "}
+          Projects
         </button>
-        {/* <button
-          onClick={scrollToView("eduction-section")}
-          className={`${
-            isMenuItem === "education-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          {" "}
-          Education{" "}
-        </button>
-        <button
-          onClick={scrollToView("eduction-section")}
-          className={`${
-            isMenuItem === "education-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          {" "}
-          Location{" "}
-        </button> */}
       </div>
     </div>
   );
-}
- 
+};
+
 export default SideMenu;
-
-
-
