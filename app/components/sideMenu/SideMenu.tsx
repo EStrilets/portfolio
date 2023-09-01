@@ -78,6 +78,14 @@ const SideMenu = () => {
           About
         </button>
         <button
+          onClick={scrollToView("projects-section")}
+          className={`${
+            isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
+          } transition duration-300 ease-in-out`}
+        >
+          Projects
+        </button>
+        <button
           onClick={scrollToView("work-section")}
           className={`${
             isMenuItem === "work-section" ? "text-text" : "text-violet-50"
@@ -92,14 +100,6 @@ const SideMenu = () => {
           } transition duration-300 ease-in-out`}
         >
           Education
-        </button>
-        <button
-          onClick={scrollToView("projects-section")}
-          className={`${
-            isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          Projects
         </button>
       </div>
     </div>
