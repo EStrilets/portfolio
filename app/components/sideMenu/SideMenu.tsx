@@ -61,7 +61,7 @@ const SideMenu = () => {
 
   return (
     <div
-      className={`fixed transition-opacity duration-300 ease-in-out ${
+      className={`fixed hidden md:block transition-opacity duration-300 ease-in-out ${
         isMenuSticky ? "opacity-100" : "opacity-0"
       } top-60 ml-[4rem] h-screen bg-transparant`}
     >

@@ -68,14 +68,16 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
           ))}
         </ExperienceCard>
         <div
-          className={`row-span-1 rounded-xl border-2 border-[#1E2A45] bg-slate-950 p-4 dark:bg-neutral-900 col-span-3`}
+          className={`row-span-1 rounded-xl border-2 border-[#1E2A45] bg-slate-950 p-4 dark:bg-neutral-900 col-span-3 hidden md:flex`}
         >
           {props.company === "SEO Soul" ? (
             <div className="ml-2 md:ml-0">
               <SEOStack />
             </div>
           ) : (
+            <div className="ml-2 md:ml-0">
             <TiggyStack />
+            </div>
           )}
         </div>
       </div>

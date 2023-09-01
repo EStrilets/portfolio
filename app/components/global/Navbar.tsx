@@ -72,6 +72,7 @@ const Navbar = () => {
     localStorage.setItem("isSelected", isSelected.toString());
   }, [isSelected]);
 
+  // opasity in nav-bar bg-opacity-50
   return (
     <nav
       className={`

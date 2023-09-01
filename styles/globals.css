@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html { 
+  scroll-behavior: smooth;
+}
 
 body { 
   background-color: #0F1521;
@@ -14,7 +17,7 @@ body {
 
 .glow-on-hover:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #b2a0ff, #2cceff, #0060b9, #9b29e7, #00ffd5, #002bff, #7a00ff, #ff00c8, #b2a0ff);
   position: absolute;
   top: -2px;
   left:-2px;
@@ -122,4 +125,33 @@ body {
 
 .hidden {
   display: none;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  height: 28rem;
+  width: 56.23rem;
+  border: 2px solid #0000;
+  border-radius: 12px;
+  background: linear-gradient(180deg,#141B2D, #020617) padding-box, linear-gradient(
+        var(--angle),
+        #00031A,
+        #5686f5
+      ) border-box;
+  animation: 8s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }

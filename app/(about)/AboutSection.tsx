@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-[#1B263E] gap-8">
+    <div className="w-full flex flex-col items-center justify-center bg-[#141B2D] gap-8">
       <div
         className="
         flex flex-col 
