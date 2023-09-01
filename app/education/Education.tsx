@@ -28,11 +28,16 @@ const Education = () => {
           <ExperienceCard colspan="col-span-2">
             <div className="space-y-3">
               <div className="flex flex-row justify-between">
-                <h1 className="text-2xl">Simon Fraser University</h1>
-                <h1 className="text-lg">2018-2022</h1>
+                <h1 className="text-2xl text-[#87A9F8]">Simon Fraser University 🇨🇦</h1>
+                <h1 className="text-lg italic">2018-2022</h1>
               </div>
               <p className="text-lg font-medium">Bachelor of Science 🎓</p>
-              <p className="text-lg font-medium">Major in Computer Science 🎨</p>
+              <div className="flex flex-row justify-between">
+                <p className="text-lg font-medium">
+                  Major in Computer Science 💻
+                </p>
+                <p className="text-lg font-medium">Vancouver, Canada</p>
+              </div>
             </div>
           </ExperienceCard>
           <ExperienceCard colspan="col-span-1">
