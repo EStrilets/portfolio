@@ -1,8 +1,8 @@
 "use client";
+import React, { useLayoutEffect, useRef } from "react";
 import projects from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
 
 interface AnimatedGradientBorderCardProps {
   children: React.ReactNode;
@@ -68,7 +68,7 @@ const Projects = () => {
         </div>
       </div>
       {projects.map((project) => (
-        <>
+        <React.Fragment key={project.id}>
           <Link href={`/projects/${project.link}`}>
             <AnimatedGradientBorderCard bgColor={project.bgColor}>
               <div className="mt-0 w-full h-[20rem] ml-0 static space-y-10 md:space-y-0 md:relative md:mt-2 md:ml-20">
@@ -95,7 +95,7 @@ const Projects = () => {
             </h1>
             <h2 className="text-xl font-sans">{project.description}</h2>
           </div>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

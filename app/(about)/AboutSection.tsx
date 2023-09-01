@@ -34,8 +34,7 @@ const AboutSection = () => {
         <div className="flex flex-col md:flex-1">
           <div className="space-y-10">
             <p className="text-xl font-sans leading-9">
-              I&apos;ve been building products and digital experiences for the
-              web since 2020. My inexhaustible curiosity and love for web
+              Since 2020, I&apos;ve been crafting UIs, specializing in creating component libraries, design systems, and front-end architecture. 
               technologies and design led me to attend <br />{" "}
               <strong className="text-text">
                 Simon Fraser University (SFU)
@@ -65,9 +64,8 @@ const AboutSection = () => {
             </p>
           </div>
           <p className="text-xl font-sans leading-9">
-            I&apos;ve worked in various areas of application development,
-            including front-end & full-stack development, Chrome Extension,
-            mobile and app UI/UX.
+            My experience spans working with startups on SaaS products, mobile apps, or e-commerce, 
+            as well as building products independently or alongside friends. 
           </p>
         </div>
       </div>
