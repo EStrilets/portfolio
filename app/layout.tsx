@@ -26,9 +26,6 @@ export default function RootLayout({
         <Navbar />
         <ToasterContext />
         {children}
-        {/* <div className="flex-grow">
-          <SideMenu />
-        </div> */}
         <Footer />
         <Analytics />
       </body>

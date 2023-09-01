@@ -30,9 +30,12 @@ const About = () => {
         <p className="md:flex items-center font-bold text-4xl text-violet-50 hidden">
           <span className="relative ml-3 h-[1.05em] w-96 overflow-hidden">
             <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white">
-              <span className="text-text"> Frontend Developer </span>
+              <span className="text-text"> Software Developer </span>
             </span>
-            <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:3.5s]">
+            <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:3s]">
+            <span className="text-text"> Frontend Developer  </span>
+            </span>
+            <span className="absolute h-full w-full -translate-y-full animate-slide leading-none text-white [animation-delay:6s]">
             <span className="text-text"> Full-stack Developer  </span>
             </span>
           </span>

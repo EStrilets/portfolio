@@ -42,8 +42,8 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        slide: "slide 7s linear infinite",
-        ["infinite-slider"]: "infiniteSlider 20s linear infinite",
+        slide: "slide 9s linear infinite",
+        ["infinite-slider"]: "infiniteSlider 35s linear infinite",
       },
       colors: {
         'main': '#0F1521',
