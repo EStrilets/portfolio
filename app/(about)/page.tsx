@@ -67,7 +67,7 @@ const About = () => {
               md:w-auto
               glow-on-hover"
           >
-            Work
+            Experience
           </button>
         </Link>
         <Link href="#projects-section">
