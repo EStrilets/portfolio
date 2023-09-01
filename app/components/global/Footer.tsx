@@ -22,18 +22,18 @@ const Footer = () => {
                 <Link href="#about-section">
                   <li
                     onClick={scrollToView("about-section")}
-                    className="mb-4 cursor-pointer"
+                    className="mb-4 cursor-pointer hover:underline hover:underline-offset-4"
                   >
                     About
                   </li>
                 </Link>
-                <Link href="/resume">
+                <Link href="/yevhenii_strilets_resume2023.pdf" target="blank">
                   <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">
                     Resume
                   </li>
                 </Link>
                 <Link href="/contact">
-                  <li className="mb-4 cursor-pointer">Contact</li>
+                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Contact</li>
                 </Link>
               </ul>
             </div>

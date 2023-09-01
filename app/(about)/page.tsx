@@ -42,7 +42,7 @@ const About = () => {
         </p>
         </div>
         <p className="font-bold text-2xl leading-relaxed text-violet-50 md:text-4xl md:leading-loose">
-        working with Typescript and React.
+        working with Typescript and React
         </p>
       </div>
       <div className="flex flex-col w-full justify-center items-center max-w-4xl mt-[1rem] mb-[6rem] space-x-0 space-y-6 md:flex-row md:space-y-0 md:justify-start md:space-x-3">
