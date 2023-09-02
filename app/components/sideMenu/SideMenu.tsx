@@ -23,7 +23,7 @@ const SideMenu = () => {
 
   useEffect(() => {
     const handleScrollSection = () => {
-      const sensitivityOffset = 900;
+      let sensitivityOffset = 900;
       const sections = [
         "about-section",
         "work-section",
@@ -78,14 +78,6 @@ const SideMenu = () => {
           About
         </button>
         <button
-          onClick={scrollToView("projects-section")}
-          className={`${
-            isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          Projects
-        </button>
-        <button
           onClick={scrollToView("work-section")}
           className={`${
             isMenuItem === "work-section" ? "text-text" : "text-violet-50"
@@ -94,12 +86,20 @@ const SideMenu = () => {
           Experience
         </button>
         <button
+          onClick={scrollToView("projects-section")}
+          className={`${
+            isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
+          } transition duration-300 ease-in-out`}
+        >
+          Projects
+        </button>
+        <button
           onClick={scrollToView("education-section")}
           className={`${
             isMenuItem === "education-section" ? "text-text" : "text-violet-50"
           } transition duration-300 ease-in-out`}
         >
-          Education
+          Education & Skills
         </button>
       </div>
     </div>

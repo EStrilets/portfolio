@@ -3,7 +3,8 @@ import Link from "next/link";
 import Projects from "../projects/Projects";
 import AboutSection from "./AboutSection";
 import Experience from "../(experience)/Experience";
-import Education from "../education/Education";
+import Education from "../(education)/Education";
+import Skills from "../(skills)/Skills";
 
 const About = () => {
   const scrollToView = (targetId: string) => (e: any) => {
@@ -85,9 +86,10 @@ const About = () => {
         </Link>
       </div>
       <AboutSection />
-      <Projects />
       <Experience />
+      <Projects />
       <Education />
+      <Skills />
     </main>
   );
 };

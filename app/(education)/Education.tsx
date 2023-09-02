@@ -7,7 +7,7 @@ import Particles from "../components/particles/Particles";
 const Education = () => {
   return (
     <div
-      className="w-full flex flex-col items-center justify-center gap-8 scroll-mt-40"
+      className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-40"
       id="education-section"
     >
       <div
@@ -28,15 +28,17 @@ const Education = () => {
           <ExperienceCard colspan="col-span-2">
             <div className="space-y-3">
               <div className="flex flex-row justify-between">
-                <h1 className="text-2xl text-[#87A9F8]">Simon Fraser University 🇨🇦</h1>
-                <h1 className="text-lg italic">2018-2022</h1>
+                <h1 className="text-2xl text-[#87A9F8]">
+                  Simon Fraser University
+                </h1>
+                <h1 className="text-lg font-medium italic">2018-2022</h1>
               </div>
-              <p className="text-lg font-medium">Bachelor of Science 🎓</p>
+              <p className="text-lg font-medium">Bachelor of Science</p>
               <div className="flex flex-row justify-between">
                 <p className="text-lg font-medium">
-                  Major in Computer Science 💻
+                  Major in Computer Science
                 </p>
-                <p className="text-lg font-medium">Vancouver, Canada</p>
+                <p className="text-lg font-medium italic">Vancouver, Canada 🇨🇦</p>
               </div>
             </div>
           </ExperienceCard>

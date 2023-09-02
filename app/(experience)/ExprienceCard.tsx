@@ -45,7 +45,7 @@ interface ExperienceCardProps {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`row-span-1 ${colspan} relative overflow-hidden rounded-xl border-2 border-[#1E2A45] bg-[#141B2D] p-6 m-4 md:m-0 shadow-2xl`}
+        className={`row-span-1 ${colspan} relative overflow-hidden rounded-xl border-2 border-[#1E2A45] bg-[#141B2D] p-6 m-4 md:m-0`}
       >
         <div
           className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"

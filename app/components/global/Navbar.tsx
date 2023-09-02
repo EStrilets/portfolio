@@ -8,7 +8,7 @@ import { BiLogoLinkedin } from "react-icons/bi";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
-import ReadingBar from "../readingBar/ReadingBar";
+import ReadingBar from "../readingProgressBar/ReadingBar";
 
 const navList = [
   {

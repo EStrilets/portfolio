@@ -5,6 +5,7 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
+import { useEffect, useRef } from 'react';
   import { PolarArea } from 'react-chartjs-2';
 
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
@@ -32,8 +33,13 @@ export const data = {
     ]
   }
 
+  interface TechStackChartProps {
+    hoveredBadge?: string | null;
+  }
 
-  export default function TechStackChartSEO() {
+
+  const TechStackChart: React.FC<TechStackChartProps> = ({ hoveredBadge }) => {
+
     const options = {
       scales: {
         r: {
@@ -62,18 +68,38 @@ export const data = {
       },
     };
 
+    useEffect(() => {
+      // Create a copy of the original backgroundColor array to avoid mutating the original data
+      const backgroundColorCopy = [...data.datasets[0].backgroundColor];
+  
+      if (hoveredBadge) {
+        // Find the index of the hoveredBadge in the labels array
+        const labelIndex = data.labels.indexOf(hoveredBadge);
+  
+        if (labelIndex !== -1) {
+          // Change the color of the corresponding segment
+          backgroundColorCopy[labelIndex] = "#ff5733"; // Change to the desired hover color
+        }
+      }
+  
+      // Update the backgroundColor property of the dataset
+      data.datasets[0].backgroundColor = backgroundColorCopy;
+    }, [hoveredBadge]);
+
     const total = data.datasets[0].data.reduce((sum, value) => sum + value, 0);
     data.datasets[0].data = data.datasets[0].data.map(
       (value) => (value / total) * 500
     );
 
-    return (
-      <div className="flex flex-col w-auto h-auto">
-        <PolarArea
-          data={data}
-          options={options}
-          className="w-[22rem] h-[22rem]"
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="flex flex-col w-auto h-auto">
+      <PolarArea
+        data={data}
+        options={options}
+        className="w-[25rem] h-[25rem]"
+      />
+    </div>
+  );
+}
+
+  export default TechStackChart
