@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { SEOStack } from "../components/charts/SEOStack";
 import ExperienceCard from "./ExprienceCard";
 import { TiggyStack } from "../components/charts/TiggyStack";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface ExperienceItemProps {
   position?: string;
@@ -14,6 +15,14 @@ interface ExperienceItemProps {
 }
 
 const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
+
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "0.7 1"],
+  })
+
+  const scaleProgress = useTransform(scrollYProgress, [0,1], [0.5, 1])
   return (
     <div
       className="
@@ -27,7 +36,12 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
           "
       id="work-section"
     >
-      <div className="grid w-full grid-cols-3 gap-4">
+      <motion.div ref={ref} className="grid w-full grid-cols-3 gap-4"
+        style={{
+          scale: scaleProgress,
+          opacity: scrollYProgress
+        }}
+      >
         <ExperienceCard colspan="col-span-2">
           <div>
             <h1 className="text-2xl md:text-2xl mb-3 text-[#87A9F8]">{props.company}</h1>
@@ -80,7 +94,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

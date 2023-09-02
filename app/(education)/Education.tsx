@@ -1,10 +1,10 @@
 "use client";
-
 import ExperienceCard from "../(experience)/ExprienceCard";
-
 import Particles from "../components/particles/Particles";
 
+
 const Education = () => {
+
   return (
     <div
       className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-40"

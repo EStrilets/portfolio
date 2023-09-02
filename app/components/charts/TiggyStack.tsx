@@ -2,11 +2,9 @@ import {
     TbBrandReact,
     TbBrandGithub,
     TbBrandJavascript,
-    TbBrandTypescript,
     TbBrandDocker,
     TbBrandCss3,
     TbBrandReactNative,
-    TbBrandGolang
   } from "react-icons/tb";
   
   import { FaGolang } from "react-icons/fa6";

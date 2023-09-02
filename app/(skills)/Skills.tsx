@@ -14,7 +14,7 @@ import {
     TbBrandCss3,
   } from "react-icons/tb";
 import { FaNodeJs } from "react-icons/fa";
-import { SiGraphql, SiCplusplus, SiJest, SiMocha, SiReactquery, SiReactrouter } from "react-icons/si";
+import { SiGraphql, SiCplusplus, SiJest, SiMocha, SiReactquery, SiReactrouter, SiRedux } from "react-icons/si";
 import { FcLinux } from "react-icons/fc";
 
 const LOGOS = [
@@ -23,7 +23,7 @@ const LOGOS = [
     { text: 'C++', element: <SiCplusplus width={24} height={24} className="text-[#044F88]" key={4} /> },
     { text: 'Next', element: <TbBrandNextjs width={50} height={24} className="text-white" key={1} /> },
     { text: 'React', element: <TbBrandReact width={24} height={24} className="text-[#61DBFB]" key={2} /> },
-    { text: 'R.Query', element: <SiReactquery width={24} height={24} className="text-[#61DBFB]" key={2} /> },
+    { text: 'Redux', element: <SiRedux width={24} height={24} className="text-[#1d8286]" key={2} /> },
     { text: 'R.Router', element: <SiReactrouter width={24} height={24} className="text-[#61DBFB]" key={2} /> },
     { text: 'NodeJS', element: <FaNodeJs width={24} height={24} className="text-[#3c873a]" key={9} /> },
   ];

@@ -1,8 +1,11 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import projects from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
+import { useScroll, useTransform, motion } from "framer-motion";
+import { mergeRefs } from "@/utils/mergeRef";
+
 
 interface AnimatedGradientBorderCardProps {
   children: React.ReactNode;
@@ -13,7 +16,16 @@ const AnimatedGradientBorderCard: React.FC<AnimatedGradientBorderCardProps> = ({
   children,
 }) => {
   const boxRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["0 1", "0.7 1"],
+  })
+
+  const scaleProgress = useTransform(scrollYProgress, [0,1], [0.5, 1])
+
+  
   useLayoutEffect(() => {
     const boxElement = boxRef.current;
 
@@ -31,9 +43,14 @@ const AnimatedGradientBorderCard: React.FC<AnimatedGradientBorderCardProps> = ({
     requestAnimationFrame(updateAnimation);
   }, []);
 
+
   return (
-    <div
-      ref={boxRef}
+    <motion.div
+      ref={mergeRefs(boxRef, scrollRef)}
+      style={{
+        scale: scaleProgress,
+        opacity: scrollYProgress
+      }}
       className="
           flex w-full
           overflow-hidden
@@ -42,7 +59,7 @@ const AnimatedGradientBorderCard: React.FC<AnimatedGradientBorderCardProps> = ({
           max-w-4xl items-center justify-center box"
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
