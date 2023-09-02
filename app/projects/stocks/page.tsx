@@ -1,5 +1,4 @@
 "use client";
-import AnimateOnScroll from "@/app/components/animationScroll/AnimationOnScroll";
 
 export default function StockSentiment() {
   return (
