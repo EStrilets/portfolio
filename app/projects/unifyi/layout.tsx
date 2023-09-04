@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import SideMenu from "../components/sideMenu/SideMenu";
-import { landingMenuItems } from "@/data/menuData"
+import { unifyiMenuItems } from "@/data/menuData"
+import SideMenu from "@/app/components/sideMenu/SideMenu";
 
 export const metadata: Metadata = {
   title: "YevStrilets",
@@ -17,7 +17,7 @@ export default function RootLayout({
       <div>
         {children}
         <div className="flex-grow">
-          <SideMenu menuList={landingMenuItems} />
+          <SideMenu menuList={unifyiMenuItems} />
         </div>
       </div>
   );

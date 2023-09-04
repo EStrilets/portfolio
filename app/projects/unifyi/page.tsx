@@ -10,11 +10,6 @@ interface BadgeAnimatedGradientBorderProps {
   text?: string;
 }
 
-interface DefaultBadgeProps {
-  logo?: React.ReactNode;
-  text?: string;
-}
-
 const BadgeAnimatedGradientBorder: React.FC<
   BadgeAnimatedGradientBorderProps
 > = ({ logo, text }) => {
@@ -72,18 +67,18 @@ export default function Unifyi() {
           Introduction
         </p>
         <p className="font-medium text-lg leading-10 text-slate-400">
-          As a member of the development team at Simon Fraser University, I led
-          a project aimed at simplifying the student experience.
+          As a member of the development team, I led
+          a project aimed at simplifying the student experience at Simon Fraser University.
           <span className="text-text font-medium">
-            The mission was to create a unified platform, offering students an
+            {" "}The mission was to create a unified platform, offering students an
             efficient way to seek answers to their academic and campus life
             queries ✨.
           </span>
-          Taking charge of both
-          <DefaultBadge text="frontend"/>
+          {" "} Taking charge of both
+          <DefaultBadge text="frontend" />
           and
           <span className="text-violet-50 font-medium">
-            <DefaultBadge text="project management"/> 
+            <DefaultBadge text="project management" />
           </span>
           , my responsibilities were central to the success.
         </p>
@@ -124,9 +119,9 @@ export default function Unifyi() {
         <ol className="list-decimal marker:text-violet-50 font-medium text-lg leading-7 text-slate-400 ml-5 space-y-6">
           <li>
             <span className="text-text font-semibold"> Outbox Table: </span>
-            Each microservice maintains an &quot;outbox table&quot; within its database to
-            store events that need to be shared. Each record contains event
-            details.
+            Each microservice maintains an &quot;outbox table&quot; within its
+            database to store events that need to be shared. Each record
+            contains event details.
           </li>
           <li>
             <span className="text-text font-semibold"> Event Publisher: </span>A
@@ -140,33 +135,126 @@ export default function Unifyi() {
         </ExperienceCard>
       </div>
       <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[1rem] p-6 md:p-0">
-        <p className="text-xl leading-10 text-violet-50 font-semibold">
-          Project Overview
+        <p className="text-2xl leading-10 text-violet-50 font-semibold">
+          Architecture
         </p>
-        <p className="font-medium text-lg leading-relaxed text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </p>
-        <p className="font-medium text-lg leading-10 text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </p>
+        <div className="grid grid-cols-2 gap-6 text-violet-50">
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">Chat Service</h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                The Chat Service facilitated real-time communication between
+                students, instructors, and administrators.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">
+              Notification Service
+            </h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                The Notification Service handled alerting and notifications to
+                keep users informed about updates, events, and important
+                announcements.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">
+              Questions and Tags Service
+            </h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                The Question and Tags Service managed the querying and tagging
+                of questions related to courses and student life.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">Courses Service</h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                The Courses Service provided essential course-related
+                information, including schedules, materials, and announcements.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">Nginx Gateway</h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                Nginx served as the gateway to our microservices, directing
+                incoming requests to the appropriate services.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">
+              WebSocket Connection Service
+            </h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                This service was responsible for establishing and managing
+                WebSocket connections, ensuring efficient and secure real-time
+                communication.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">Infrastructure</h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                Kubernetes, alongside Docker containers, provided scalable,
+                fault-tolerant microservices deployment, while Helm streamlined
+                package management for service configuration and scaling.
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <h1 className="text-lg font-semibold text-text">Frontend Client</h1>
+            <ul className="list-disc marker:text-violet-50 ml-5 text-lg leading-8 text-slate-400">
+              <li>
+                It seamlessly integrated with our microservices, providing
+                students with an intuitive and responsive platform for accessing
+                information, asking questions, and communicating.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div className="w-full max-w-3xl"></div>
       <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
         <p className="text-xl leading-relaxed text-violet-50 font-semibold">
           Technology Stack
         </p>
-        <p className="font-medium text-lg leading-10 text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </p>
+        <ol className="list-decimal marker:text-violet-50 font-medium text-lg leading-7 text-slate-400 ml-5 space-y-6">
+          <li>
+            <span className="text-text font-semibold"> Backend Services: </span>{" "}
+            <DefaultBadge text="Golang" /> was the foundation for our
+            microservices, ensuring efficiency and scalability.
+          </li>
+          <li>
+            <span className="text-text font-semibold"> Frontend: </span>{" "}
+            <DefaultBadge text="JavaScript" /> and <DefaultBadge text="React" />{" "}
+            powered our user-friendly interface, offering interactivity and
+            responsiveness.
+          </li>
+          <li>
+            <span className="text-text font-semibold"> Event Broker: </span>{" "}
+            <DefaultBadge text="Apache Kafka" /> facilitated event-driven
+            communication, supporting the outbox pattern for data consistency.
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              {" "}
+              Containerization & Orchestration:{" "}
+            </span>{" "}
+            <DefaultBadge text="Kubernetes" />, <DefaultBadge text="Docker" />
+            , and <DefaultBadge text="Helm" /> streamlined deployment, scaling,
+            and management for our microservices-based architecture.
+          </li>
+        </ol>
         <ExperienceCard>
           <div className="flex justify-center items-center">
             <TechStackChart />
@@ -197,7 +285,7 @@ export default function Unifyi() {
       </div>
       <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
         <p className="text-xl leading-10 text-violet-50 font-semibold">
-          Key Features and Functionality
+          Key Features
         </p>
         <p className="font-medium text-lg leading-10 text-slate-400">
           Lorem Ipsum is simply dummy text of the printing and typesetting

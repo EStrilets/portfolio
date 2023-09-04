@@ -1,16 +1,26 @@
 "use client";
 import { useEffect, useState } from "react";
 
-interface SideMenuProps { 
+type MenuItem = {
+  text: string;
+  section: string;
+};
 
+type MenuList = { 
+  items: MenuItem[],
+  scrollOffset: number
 }
 
-const SideMenu = () => {
+interface SideMenuProps {
+  menuList: MenuList;
+}
+
+const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
   const [isMenuSticky, setIsMenuSticky] = useState(false);
   const [isMenuItem, setMenuItem] = useState("about-section");
 
   const handleScrollMenu = () => {
-    if (window.scrollY > 450) {
+    if (window.scrollY > menuList.scrollOffset) {
       setIsMenuSticky(true);
     } else {
       setIsMenuSticky(false);
@@ -73,38 +83,17 @@ const SideMenu = () => {
       } top-60 ml-[4rem] h-screen bg-transparant`}
     >
       <div className="flex flex-col justify-center items-start space-y-6 border-l-[2.5px] border-[#1E2A45] p-3">
-        <button
-          onClick={scrollToView("about-section")}
-          className={`${
-            isMenuItem === "about-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          About
-        </button>
-        <button
-          onClick={scrollToView("work-section")}
-          className={`${
-            isMenuItem === "work-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          Experience
-        </button>
-        <button
-          onClick={scrollToView("projects-section")}
-          className={`${
-            isMenuItem === "projects-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          Projects
-        </button>
-        <button
-          onClick={scrollToView("education-section")}
-          className={`${
-            isMenuItem === "education-section" ? "text-text" : "text-violet-50"
-          } transition duration-300 ease-in-out`}
-        >
-          Education & Skills
-        </button>
+        {menuList.items.map((item, key) => (
+          <button
+            key={key}
+            onClick={scrollToView(`${item.section}`)}
+            className={`${
+              isMenuItem === `${item.section}` ? "text-text" : "text-violet-50"
+            } transition duration-300 ease-in-out`}
+          >
+            {item.text}
+          </button>
+        ))}
       </div>
     </div>
   );

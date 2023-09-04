@@ -5,8 +5,6 @@ import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import ToasterContext from "./context/ToasterContext";
-import ReadingBar from "./components/readingProgressBar/ReadingBar";
-import SideMenu from "./components/sideMenu/SideMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
