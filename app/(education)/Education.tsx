@@ -31,7 +31,7 @@ const Education = () => {
                 <h1 className="text-2xl text-[#87A9F8]">
                   Simon Fraser University
                 </h1>
-                <h1 className="text-lg font-medium italic">2018-2022</h1>
+                <h1 className="text-lg font-medium italic">2018-2021</h1>
               </div>
               <p className="text-lg font-medium">Bachelor of Science</p>
               <div className="flex flex-row justify-between">
