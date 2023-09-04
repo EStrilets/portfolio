@@ -29,7 +29,7 @@ const experience = [
         position: "Junior Software Developer",
         company: "Tiggy",
         type: "Full-time ",
-        date: "Feb-Aug 2022",
+        date: "Oct 2021-Aug 2022",
         description: "At Tiggy, I held the role of a junior " +
             "software developer focused on the grocery delivery sector. I contributed and developed real-time " +
             "driver tracking and notification features, improving delivery accuracy and increasing daily active users.",

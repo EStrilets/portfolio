@@ -15,7 +15,6 @@ import {
   } from "react-icons/tb";
 import { FaNodeJs } from "react-icons/fa";
 import { SiGraphql, SiCplusplus, SiJest, SiMocha, SiReactquery, SiReactrouter, SiRedux } from "react-icons/si";
-import { FcLinux } from "react-icons/fc";
 
 const LOGOS = [
     { text: 'JavaScript', element: <TbBrandJavascript width={24} height={24} className="text-[#F0DB4f]" key={4} /> },
@@ -58,7 +57,7 @@ const LOGOS = [
         onMouseEnter={onMouseEnter} // Add onMouseEnter event handler
         onMouseLeave={onMouseLeave} // Add onMouseLeave event handler
       >
-        <div className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'>
+        <div className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'>
           <h1 className="mr-1 text-violet-50">{text}</h1> {logo}
         </div>
       </span>
@@ -91,7 +90,6 @@ const Skills = () => {
   return (
     <div
       className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-40 -mt-10"
-      id="education-section"
     >
       <div
         className="

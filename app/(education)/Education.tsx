@@ -7,7 +7,7 @@ const Education = () => {
 
   return (
     <div
-      className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-40"
+      className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-20"
       id="education-section"
     >
       <div

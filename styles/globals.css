@@ -136,7 +136,7 @@ body {
   width: 56.23rem;
   border: 2px solid #0000;
   border-radius: 12px;
-  background: linear-gradient(180deg,#141B2D, #020617) padding-box, linear-gradient(
+  background: linear-gradient(180deg,#141B2D, #141B2D) padding-box, linear-gradient(
         var(--angle),
         #00031A,
         #5686f5

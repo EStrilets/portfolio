@@ -77,7 +77,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
                 </svg>
                 <h1 className="text-lg font-semibold">{item.header}</h1>
               </div>
-              <p className="ml-7 text-base font-medium">{item.body}</p>
+              <p className="ml-7 text-base font-medium text-slate-400">{item.body}</p>
             </React.Fragment>
           ))}
         </ExperienceCard>

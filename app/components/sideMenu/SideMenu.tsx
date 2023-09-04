@@ -1,12 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 
+interface SideMenuProps { 
+
+}
+
 const SideMenu = () => {
   const [isMenuSticky, setIsMenuSticky] = useState(false);
   const [isMenuItem, setMenuItem] = useState("about-section");
 
   const handleScrollMenu = () => {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 450) {
       setIsMenuSticky(true);
     } else {
       setIsMenuSticky(false);
@@ -36,7 +40,7 @@ const SideMenu = () => {
           const rect = sectionElement.getBoundingClientRect();
           if (
             rect.top <= window.innerHeight / 2 &&
-            rect.bottom + sensitivityOffset >= window.innerHeight / 2
+            rect.bottom + sensitivityOffset >= window.innerHeight / 0.9
           ) {
             setMenuItem(sectionId);
             break;
