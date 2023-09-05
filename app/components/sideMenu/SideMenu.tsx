@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type MenuItem = {
   text: string;
@@ -19,13 +19,13 @@ const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
   const [isMenuSticky, setIsMenuSticky] = useState(false);
   const [isMenuItem, setMenuItem] = useState("about-section");
 
-  const handleScrollMenu = () => {
+  const handleScrollMenu = useCallback(() => {
     if (window.scrollY > menuList.scrollOffset) {
       setIsMenuSticky(true);
     } else {
       setIsMenuSticky(false);
     }
-  };
+  }, [menuList.scrollOffset]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScrollMenu);
@@ -33,16 +33,13 @@ const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
     return () => {
       window.removeEventListener("scroll", handleScrollMenu);
     };
-  }, []);
+  }, [handleScrollMenu]);
 
   useEffect(() => {
     const handleScrollSection = () => {
       let sensitivityOffset = 900;
       const sections = [
-        "about-section",
-        "work-section",
-        "projects-section",
-        "education-section",
+        ...menuList.items.map((item) => item.section)
       ];
       for (const sectionId of sections) {
         const sectionElement = document.getElementById(sectionId);
@@ -64,7 +61,7 @@ const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
     return () => {
       window.removeEventListener("scroll", handleScrollSection);
     };
-  }, []);
+  }, [menuList.items]);
 
   const scrollToView = (targetId: string) => (e: any) => {
     e.preventDefault();

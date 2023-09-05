@@ -1,8 +1,9 @@
 "use client";
 
 import ExperienceCard from "@/app/(experience)/ExprienceCard";
-import TechStackChart from "@/app/components/charts/TechStackChart";
+import UnifyiChart from "@/app/components/charts/UnifyiChart";
 import MainDiagram from "@/app/components/diagrams/MainDiagram";
+import Image from "next/image";
 import Link from "next/link";
 
 interface BadgeAnimatedGradientBorderProps {
@@ -23,16 +24,13 @@ const BadgeAnimatedGradientBorder: React.FC<
   );
 };
 
-
 const DefaultBadge: React.FC<BadgeAnimatedGradientBorderProps> = ({
   logo,
   text,
 }) => {
   return (
     <span className="inline-flex mx-1 cursor-pointer items-center justify-center rounded-lg border border-[#1E2A45] bg-[#141B2D] px-3 py-1 text-sm font-medium text-slate-300 backdrop-blur-3xl">
-      <span className="text-text">
-       {text}
-      </span>
+      <span className="text-text">{text}</span>
     </span>
   );
 };
@@ -53,7 +51,7 @@ export default function Unifyi() {
           Unifyi - Microservices Web Application
         </p>
         <p className="font-medium text-sm leading-relaxed text-violet-50">
-          March 2021 - June 2022 / 10min read
+          March 2021 - June 2022 / 5min read
         </p>
       </div>
       <div className="flex flex-row justify-start w-full max-w-3xl gap-4">
@@ -62,19 +60,20 @@ export default function Unifyi() {
         <BadgeAnimatedGradientBorder text="Teamwork" />
         <BadgeAnimatedGradientBorder text="Start-up" />
       </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="intro-section">
         <p className="text-2xl leading-relaxed text-violet-50 font-semibold">
           Introduction
         </p>
         <p className="font-medium text-lg leading-10 text-slate-400">
-          As a member of the development team, I led
-          a project aimed at simplifying the student experience at Simon Fraser University.
+          As a member of the development team, I led a project aimed at
+          simplifying the student experience at Simon Fraser University.
           <span className="text-text font-medium">
-            {" "}The mission was to create a unified platform, offering students an
+            {" "}
+            The mission was to create a unified platform, offering students an
             efficient way to seek answers to their academic and campus life
             queries ✨.
-          </span>
-          {" "} Taking charge of both
+          </span>{" "}
+          Taking charge of both
           <DefaultBadge text="frontend" />
           and
           <span className="text-violet-50 font-medium">
@@ -96,7 +95,7 @@ export default function Unifyi() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         />
       </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="microservices-section">
         <p className="text-2xl  leading-10 text-violet-50 font-semibold">
           Understanding microservices
         </p>
@@ -134,7 +133,59 @@ export default function Unifyi() {
           <MainDiagram />
         </ExperienceCard>
       </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[1rem] p-6 md:p-0">
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="overview-section">
+        <p className="text-2xl  leading-10 text-violet-50 font-semibold">
+          Project Overview
+        </p>
+        <p className="font-medium text-lg leading-10 text-slate-400">
+          <span className="text-text font-semibold"> Unifyi </span> aimed to
+          merge student life and academics into one platform, allowing students
+          to discuss various topics, including courses, exams, and general
+          matters. Its core feature was a Question and Answer (QA) system,
+          enabling information exchange through questions and answers.
+          Additionally, students could create specific discussion topics, with
+          an integrated chat connecting all university courses.
+        </p>
+        <div className="grid grid-cols-2 gap-2 text-violet-50">
+          <div className="col-span-1">
+            <Image
+              src="/unifyi2.png"
+              alt="image"
+              width={550}
+              height={700}
+              className="top-0 left-0 filter drop-shadow-lg rounded-md h-[13rem]"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              src="/unifyi1.png"
+              alt="image"
+              width={550}
+              height={700}
+              className="top-0 left-0 filter drop-shadow-lg h-[13rem] rounded-md"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              src="/unifyi3.png"
+              alt="image"
+              width={550}
+              height={700}
+              className="top-0 left-0 filter drop-shadow-lg h-[13rem] rounded-md"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              src="/unifyi4.png"
+              alt="image"
+              width={550}
+              height={700}
+              className="top-0 left-0 filter drop-shadow-lg h-[13rem] rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[1rem] p-6 md:p-0 scroll-mt-40" id="architecture-section">
         <p className="text-2xl leading-10 text-violet-50 font-semibold">
           Architecture
         </p>
@@ -222,10 +273,13 @@ export default function Unifyi() {
             </ul>
           </div>
         </div>
+        <ExperienceCard>
+          <MainDiagram />
+        </ExperienceCard>
       </div>
       <div className="w-full max-w-3xl"></div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
-        <p className="text-xl leading-relaxed text-violet-50 font-semibold">
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="tech-section">
+        <p className="text-2xl leading-relaxed text-violet-50 font-semibold">
           Technology Stack
         </p>
         <ol className="list-decimal marker:text-violet-50 font-medium text-lg leading-7 text-slate-400 ml-5 space-y-6">
@@ -257,41 +311,112 @@ export default function Unifyi() {
         </ol>
         <ExperienceCard>
           <div className="flex justify-center items-center">
-            <TechStackChart />
+            <UnifyiChart />
           </div>
         </ExperienceCard>
       </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
-        <p className="text-xl leading-10 text-violet-50 font-semibold">
-          Architecture and Design
-        </p>
-        <p className="font-medium text-lg leading-10 text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </p>
-      </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
-        <p className="text-xl leading-10 text-violet-50 font-semibold">
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40"  id="development-section">
+        <p className="text-2xl leading-10 text-violet-50 font-semibold">
           Development Process
         </p>
         <p className="font-medium text-lg leading-10 text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been thestandard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
-        </p>
-      </div>
-      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0">
-        <p className="text-xl leading-10 text-violet-50 font-semibold">
-          Key Features
+          Our development process thrived within an{" "}
+          <DefaultBadge text="Agile environmention" /> , marked by
+          <DefaultBadge text="Weekly sprints" /> that ensured a steady pace of
+          work.
         </p>
         <p className="font-medium text-lg leading-10 text-slate-400">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
+          I efficiently managed tasks and progress through{" "}
+          <DefaultBadge text="Notion" />, team&apos;s project management tool of
+          choice. Daily <DefaultBadge text="Scrum meetings" /> kept the team
+          synchronized, while a well-maintained backlog allowed for the
+          prioritization of tasks and features.
+        </p>
+        <p className="font-medium text-lg leading-10 text-slate-400">
+          Embracing an iterative approach, we regularly delivered working
+          features, actively sought feedback, and conducted thorough testing,
+          all of which contributed to the project&apos;s quality and
+          adaptability. At the end of each sprint, deployed features underwent
+          stakeholder and user review, shaping our ongoing development efforts.
+        </p>
+      </div>
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="features-section">
+        <p className="text-2xl leading-10 text-violet-50 font-semibold">
+          Key Features
+        </p>
+        <ol className="list-decimal marker:text-violet-50 font-medium text-lg leading-7 text-slate-400 ml-5 space-y-6">
+          <li>
+            <span className="text-text font-semibold">
+              {" "}
+              Login with Google:{" "}
+            </span>{" "}
+            The platform offered a seamless login experience by allowing users
+            to sign in with their Google accounts.
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              {" "}
+              Course Selection from University{" "}
+            </span>{" "}
+            Users had the flexibility to choose courses from a wide array of
+            universities available on the platform.
+          </li>
+          <li>
+            <span className="text-text font-semibold"> Topic Creation: </span>{" "}
+            One of the standout features was the ability for users to create
+            discussion topics across various courses.
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              Participation in Course Chats:
+            </span>{" "}
+            The platform facilitated real-time interaction among students by
+            integrating chat functionality into each course.
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              Question Creation with Topics and Courses:
+            </span>{" "}
+            Students could pose questions within specific courses and topics,
+            enabling focused and organized discussions.
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              Filtering Questions by Topics and Courses:
+            </span>{" "}
+            To enhance accessibility and findability, the platform offered
+            advanced filtering options. Users could sort questions by topics,
+            courses, and other criteria,
+          </li>
+          <li>
+            <span className="text-text font-semibold">
+              Profile Availability:
+            </span>{" "}
+            Users had the option to set up and customize their profiles, making
+            it easy for others to identify and connect with them.
+          </li>
+        </ol>
+      </div>
+      <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="conclusion-section">
+        <p className="text-2xl leading-10 text-violet-50 font-semibold">
+          Conclusion
+        </p>
+        <p className="font-medium text-lg leading-10 text-slate-400">
+          In summary, the website garnered{" "}
+          <span className="text-text font-semibold">1000+ users</span> after a
+          year of development.  <span className="text-violet-50 font-semibold">Team collaboration was a crucial part of our
+          journey, as we focused on delivering a production-ready product that
+          prioritizes scalability and reliability.</span>
+        </p>
+        <p className="font-medium text-lg leading-10 text-slate-400">
+        <span className="text-green-400 font-semibold"> This journey taught me valuable lessons, emphasizing the importance of
+          testing ideas early, rapid deployment, user feedback loop, and
+          holistic product development </span>. It underscored the significance of not
+          only the technology stack but also aspects like  <span className="text-text font-semibold">UI/UX design, metrics,
+          and a deep understanding of the problems we aim to solve.</span> These
+          lessons have become guiding principles in my approach to future
+          projects, ensuring a more comprehensive and user-centric development
+          process.
         </p>
       </div>
     </div>

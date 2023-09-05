@@ -10,12 +10,14 @@ export const landingMenuItems = {
 
 export const unifyiMenuItems = {
     items: [
-        { text: 'Introduction', section: 'about-section' },
-        { text: 'Microservices', section: 'work-section' },
-        { text: 'Architecture', section: 'projects-section' },
-        { text: 'Technology Stack', section: 'education-section' },
-        { text: 'Key Features', section: 'education-section' },
-        { text: 'Conclusion', section: 'education-section' },
+        { text: 'Introduction', section: 'intro-section' },
+        { text: 'Microservices', section: 'microservices-section' },
+        { text: 'Project Overview', section: 'overview-section' },
+        { text: 'Architecture', section: 'architecture-section' },
+        { text: 'Technology Stack', section: 'tech-section' },
+        { text: 'Development Process', section: 'development-section' },
+        { text: 'Key Features', section: 'features-section' },
+        { text: 'Conclusion', section: 'conclusion-section' },
     ],
     scrollOffset: 0,
 };

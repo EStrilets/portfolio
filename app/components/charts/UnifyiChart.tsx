@@ -5,17 +5,16 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
-import { useEffect, useRef } from 'react';
   import { PolarArea } from 'react-chartjs-2';
 
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const data = {
-    labels: ["JavaScript", "TypeScript", "Golang", "Docker", "Kubernetes", "Helm", "PostgreSQL", "React", "MaterialUI"],
+    labels: ["JavaScript", "TypeScript", "Golang", "Docker", "Kubernetes", "Helm", "PostgreSQL", "React", "MaterialUI", "Nginx", "Kafka"],
     datasets: [
         {
-            data: [45, 72, 76, 44, 34, 55, 51, 64],
-            backgroundColor: ["rgba(240, 219, 79, 1)", "rgba(0, 122, 204, 1)", "rgba(97, 219, 251, 1)", "rgba(225, 0, 152, 1)", "rgba(240, 101, 41, 1)", "rgba(38, 77, 228, 1)", "rgba(255, 255, 255, 1)", "rgba(215, 92, 156, 1)",  "rgba(215, 92, 156, 1)"],
+            data: [45, 72, 82, 44, 34, 55, 51, 64, 54, 45, 82],
+            backgroundColor: ["rgba(240, 219, 79, 1)", "rgba(0, 122, 204, 1)", "rgba(97, 219, 251, 1)", "rgba(225, 0, 152, 1)", "rgba(225, 0, 152, 1)", "rgba(240, 101, 41, 1)", "rgba(38, 77, 228, 1)", "rgba(38, 77, 228, 1)", "rgba(255, 255, 255, 1)", "rgba(215, 92, 156, 1)",  "rgba(215, 92, 156, 1)"],
             borderColor: '#1B263E',
             borderWidth: 1,
             datalabels: {
@@ -25,7 +24,7 @@ export const data = {
             },
         },
         {
-            data: [100, 100, 100, 100, 100, 100, 100, 100],
+            data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
             backgroundColor: ["rgba(159, 186, 249, 0.3)"],
             borderColor: '#1B263E',
             borderWidth: 1,
@@ -65,7 +64,7 @@ export const data = {
 
     const total = data.datasets[0].data.reduce((sum, value) => sum + value, 0);
     data.datasets[0].data = data.datasets[0].data.map(
-      (value) => (value / total) * 500
+      (value) => (value / total) * 600
     );
 
   return (
