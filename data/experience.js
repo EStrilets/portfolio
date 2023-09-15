@@ -24,32 +24,32 @@ const experience = [
             }
         ],
     },
-    {
-        id: 2,
-        position: "Junior Software Developer",
-        company: "Tiggy",
-        type: "Full-time ",
-        date: "Oct 2021-Aug 2022",
-        description: "At Tiggy, I held the role of a junior " +
-            "software developer focused on the grocery delivery sector. I contributed and developed real-time " +
-            "driver tracking and notification features, improving delivery accuracy and increasing daily active users.",
-        headerPoints: [
-            {
-                header: "Integrated WebSocket technology for real-time driver tracking and notification system",
-                body: "Leading to a 20% improvement in delivery ETA accuracy and customer satisfaction"
-            },
-            {
-                header: "Reduced the loading time of admin panel pages",
-                body: "Resulting from 15 seconds to 3-5 seconds using PostgreSQL projection " +
-                "and pagination to allow a smoother user experience"
-            },
-            {
-                header: "Wrote unit and integration tests for a notification system with over 90% coverage",
-                body: "Covered every component and endpoint with test suite using Jest"
-            },
+    // {
+    //     id: 2,
+    //     position: "Junior Software Developer",
+    //     company: "Tiggy",
+    //     type: "Full-time ",
+    //     date: "Oct 2021-Aug 2022",
+    //     description: "At Tiggy, I held the role of a junior " +
+    //         "software developer focused on the grocery delivery sector. I contributed and developed real-time " +
+    //         "driver tracking and notification features, improving delivery accuracy and increasing daily active users.",
+    //     headerPoints: [
+    //         {
+    //             header: "Integrated WebSocket technology for real-time driver tracking and notification system",
+    //             body: "Leading to a 20% improvement in delivery ETA accuracy and customer satisfaction"
+    //         },
+    //         {
+    //             header: "Reduced the loading time of admin panel pages",
+    //             body: "Resulting from 15 seconds to 3-5 seconds using PostgreSQL projection " +
+    //             "and pagination to allow a smoother user experience"
+    //         },
+    //         {
+    //             header: "Wrote unit and integration tests for a notification system with over 90% coverage",
+    //             body: "Covered every component and endpoint with test suite using Jest"
+    //         },
 
-        ],
-    },
+    //     ],
+    // },
 
 ]
 
