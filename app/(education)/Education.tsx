@@ -1,6 +1,6 @@
 "use client";
 import ExperienceCard from "../(experience)/ExprienceCard";
-import Particles from "../components/particles/Particles";
+import Particles from '@/components/particles/Particles'
 
 
 const Education = () => {

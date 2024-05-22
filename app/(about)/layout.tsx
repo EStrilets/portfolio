@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import SideMenu from "../components/sideMenu/SideMenu";
+import SideMenu from "@/components/sideMenu/SideMenu";
 import { landingMenuItems } from "@/data/menuData"
 
 export const metadata: Metadata = {

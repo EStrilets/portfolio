@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { BiLogoHtml5 } from "react-icons/bi";
 import ExperienceCard from "../(experience)/ExprienceCard";
-import TechStackChart from "../components/charts/TechStackChart";
+import TechStackChart from "@/components/charts/TechStackChart";
 import {
     TbBrandNextjs,
     TbBrandReact,

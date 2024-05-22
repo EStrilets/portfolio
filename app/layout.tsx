@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "./components/global/Navbar";
-import Footer from "./components/global/Footer";
+import Navbar from "@/components/global/Navbar";
+import Footer from "@/components/global/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import ToasterContext from "./context/ToasterContext";
 

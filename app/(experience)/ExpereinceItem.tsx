@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import { SEOStack } from "../components/charts/SEOStack";
+import { SEOStack } from "@/components/charts/SEOStack";
 import ExperienceCard from "./ExprienceCard";
-import { TiggyStack } from "../components/charts/TiggyStack";
+import { TiggyStack } from "@/components/charts/TiggyStack"
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface ExperienceItemProps {
