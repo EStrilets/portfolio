@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { unifyiMenuItems } from "@/data/menuData"
-import SideMenu from "@/app/components/sideMenu/SideMenu";
+import SideMenu from "@/components/sideMenu/SideMenu";
 
 export const metadata: Metadata = {
   title: "YevStrilets",
