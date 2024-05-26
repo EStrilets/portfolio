@@ -75,9 +75,9 @@ const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
 
   return (
     <div
-      className={`fixed hidden md:block transition-opacity duration-300 ease-in-out ${
+      className={`fixed hidden 2xl:block transition-opacity duration-300 ease-in-out ${
         isMenuSticky ? "opacity-100" : "opacity-0"
-      } top-60 ml-[4rem] h-screen bg-transparant`}
+      } top-60 ml-[2.5rem] h-screen bg-transparant`}
     >
       <div className="flex flex-col justify-center items-start space-y-6 border-l-[2.5px] border-[#1E2A45] p-3">
         {menuList.items.map((item, key) => (
@@ -86,7 +86,7 @@ const SideMenu:React.FC<SideMenuProps> = ({ menuList }) => {
             onClick={scrollToView(`${item.section}`)}
             className={`${
               isMenuItem === `${item.section}` ? "text-text" : "text-violet-50"
-            } transition duration-300 ease-in-out`}
+            } transition duration-300 ease-in-out text-[0.9rem]`}
           >
             {item.text}
           </button>

@@ -5,6 +5,9 @@ import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import ToasterContext from "./context/ToasterContext";
+import { SlidingTabBar } from "@/components/global/SlidingTabBar";
+import { ThemeProvider } from "@/components/theme-provider";
+import "@theme-toggles/react/css/Expand.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,12 +23,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <ToasterContext />
-        {children}
-        <Footer />
-        <Analytics />
+      <body className={`${inter.className} bg-[#ebebff] dark:bg-[#0F1521]`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div>
+            {/* <Navbar /> */}
+            <ToasterContext />
+            {children}
+            {/* <Footer /> */}
+            <Analytics />
+          </div>
+          <SlidingTabBar />
+        </ThemeProvider>
       </body>
     </html>
   );

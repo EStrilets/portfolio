@@ -13,7 +13,7 @@ const Footer = () => {
     }
   };
   return (
-    <footer className="bg-transperant mt-28 bg-[#141B2D] border-t-[0.5px] border-[#1E2A45]">
+    <footer className="bg-transperant mt-28 bg-[#141B2D] border-t-[0.5px] border-[#1E2A45] bottom-0">
       <div className="mx-auto w-full max-w-4xl p-4 py-6 lg:py-8 text-white">
         <div className="md:flex md:justify-between">
           <div className="grid grid-cols-2 space-x-10 sm:gap-6 sm:grid-cols-3">
