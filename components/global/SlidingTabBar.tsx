@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { DarkModeToggle } from "../DarkModeToggle";
-import { FiMoreHorizontal } from "react-icons/fi";
+import Dropdown from "../Dropdown";
 import {
   Tooltip,
   TooltipContent,
@@ -9,8 +10,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { BiArch } from "react-icons/bi";
-import { BsFilePdf, BsLightbulb } from "react-icons/bs";
-import Link from "next/link";
+import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
+import { MdLightbulbOutline } from "react-icons/md";
+import { HiOutlineDocumentText } from "react-icons/hi";
+
+
 
 let allTabs = [
   {
@@ -23,23 +27,29 @@ let allTabs = [
     id: "projects",
     link: "/projects",
     name: "Projects",
-    icon: <BsLightbulb size={22} />,
+    icon: <MdLightbulbOutline size={22} />,
   },
   {
     id: "resume",
     link: "/yevhenii_strilets_resume2023.pdf",
     name: "Resume",
-    icon: <BsFilePdf size={22} />,
+    icon: <HiOutlineDocumentText size={22} />,
   },
+];
+
+const menuItems = [
+  { name: "LinkedIn", icon: <FaLinkedinIn size={18} className="dark:text-white text-main-text-light" /> },
+  { name: "Github", icon: <FaGithubAlt size={18} className="dark:text-white text-main-text-light" /> },
+  // { name: "Notifications", icon: <FiBell /> },
 ];
 
 export const SlidingTabBar = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
   const homeTabIndex = allTabs.findIndex((tab) => tab.id === "home");
+  
   const [activeTabIndex, setActiveTabIndex] = useState<number>(homeTabIndex);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
-
 
   useEffect(() => {
     if (activeTabIndex === null) {
@@ -63,12 +73,14 @@ export const SlidingTabBar = () => {
 
   return (
     <div
-      className="backdrop-filter backdrop-blur-sm bg-opacity-60
+      className="backdrop-filter backdrop-blur-sm bg-opacity-8
       transition-all duration-300 ease-in-out
-      bg-[#495b88] flew justify-center items-center align-middle sticky bottom-4 mt-12 mx-auto flex w-max h-12 rounded-xl"
+      border-[1px] border-[#1e2a45]
+      bg-[#495b88] flew justify-center items-center align-middle sticky 
+      bottom-4 mt-12 mx-auto flex w-max h-12 rounded-xl px-1"
     >
       <span
-        className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-md py-1 px-2 transition-all duration-300"
+        className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-md py-2 px-2 transition-all duration-300"
         style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
       >
         <span className="h-full w-full rounded-lg bg-[#405079]" />
@@ -77,39 +89,39 @@ export const SlidingTabBar = () => {
         const isActive = activeTabIndex === index;
 
         return (
-          <TooltipProvider delayDuration={100}>
+          <TooltipProvider delayDuration={100} key={index}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Link
-                className="mx-0 my-0"
-                  key={tab.id}
-                  href={tab.link ? tab.link : ""}
-                  target={tab.name === "Resume" ? "blank" : ""}
+                <button
+                  ref={(el) => (tabsRef.current[index] = el)}
+                  className="my-auto cursor-pointer select-none rounded-full px-3 text-center font-light text-white"
+                  onClick={() => handleTabClick(index, tab.id)}
                 >
-                  <button
-                    key={index}
-                    ref={(el) => (tabsRef.current[index] = el)}
-                    className="my-auto cursor-pointer select-none rounded-full px-4 text-center font-light text-white"
-                    onClick={() => handleTabClick(index, tab.id)}
+                  <Link
+                    className="mx-0 my-0"
+                    key={tab.id}
+                    href={tab.link ? tab.link : ""}
+                    target={tab.name === "Resume" ? "blank" : ""}
                   >
                     {React.cloneElement(tab.icon, {
-                      className: `mt-[0.2rem] ${
-                        isActive ? "text-text" : "text-second dark:text-white"
+                      className: `${
+                        isActive ? "text-text" : "text-main-text-light dark:text-white"
                       }`,
                     })}
-                  </button>
-                </Link>
+                  </Link>
+                </button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{tab.name}</p>
+                <p className="text-white">{tab.name}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         );
       })}
-      <span className="inline-block h-[2rem] w-[0.125rem] self-stretch bg-second bg-white/10 rounded-lg mt-[0.4rem] mx-1" />
-      <FiMoreHorizontal size={24} className="mx-1" />
+      <span className="inline-block justify-center align-middle h-[1.8rem] w-[0.125rem] self-stretch bg-second bg-white/10 rounded-lg mt-[0.6rem] mr-1" />
+        <Dropdown items={menuItems}  />
       <DarkModeToggle />
     </div>
   );
 };
+

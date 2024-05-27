@@ -49,6 +49,7 @@ module.exports = {
         'main': '#0F1521',
         'second': '#1B263E',
         'text': '#5686f5',
+        'main-text-light': '#020617',
       }
     },
   },

@@ -22,7 +22,7 @@ export function DarkModeToggle() {
   return (
     <Expand
       duration={750}
-      className="text-[1.6rem] mx-2"
+      className="text-[1.5rem] mx-2"
       onToggle={handleToggle}
     />
   );

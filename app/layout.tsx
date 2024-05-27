@@ -1,13 +1,11 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/global/Navbar";
-import Footer from "@/components/global/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import ToasterContext from "./context/ToasterContext";
 import { SlidingTabBar } from "@/components/global/SlidingTabBar";
 import { ThemeProvider } from "@/components/theme-provider";
-import "@theme-toggles/react/css/Expand.css"
+import "@theme-toggles/react/css/Expand.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,10 +29,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div>
-            {/* <Navbar /> */}
             <ToasterContext />
             {children}
-            {/* <Footer /> */}
             <Analytics />
           </div>
           <SlidingTabBar />
@@ -43,3 +39,4 @@ export default function RootLayout({
     </html>
   );
 }
+
