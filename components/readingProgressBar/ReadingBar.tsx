@@ -7,7 +7,7 @@ const ReadingBar = () => {
     return ( 
         <span
         style={{ transform: `translateX(${completion - 100}%)` }}
-        className="flex fixed bg-text h-[2px] w-full bottom-0 transition-all ease-in-out"
+        className="flex fixed bg-text h-[2px] w-full max-w-4xl bottom-0 transition-all ease-in-out"
       />
      );
 }

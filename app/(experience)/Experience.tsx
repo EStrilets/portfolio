@@ -16,7 +16,7 @@ const Experience = () => {
         md:items-start
         "
       >
-        <div className="mb-6">
+        <div className="mb-6 text-light-text dark:text-white">
           <h1>Experience</h1>
         </div>
         {experience.map((item) => (

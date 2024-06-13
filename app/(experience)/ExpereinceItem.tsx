@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { SEOStack } from "@/components/charts/SEOStack";
-import ExperienceCard from "./ExprienceCard";
+import ExperienceCard from "../../components/ExprienceCard";
 import { TiggyStack } from "@/components/charts/TiggyStack"
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -12,6 +12,7 @@ interface ExperienceItemProps {
   description?: string;
   headerPoints?: { header: string; body: string }[];
   type?: string;
+  sectionId?: string;
 }
 
 const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
@@ -30,11 +31,11 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
           w-full max-w-4xl
           items-start justify-center 
           font-bold text-3xl
-          mt-[3rem]
-          text-violet-50
-          scroll-mt-60
+          mt-[3rem] text-light-text
+          dark:text-white
+          scroll-mt-55
           "
-      id="work-section"
+      id={props.sectionId}
     >
       <motion.div ref={ref} className="grid w-full grid-cols-3 gap-4"
         style={{
@@ -55,10 +56,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
             <p className="flex items-center h-16 text-2xl text-[#87A9F8] ml-[1.2rem] md:ml-0 w-[14rem]">
               {props.position}
             </p>
-            <p className="flex items-center h-6 text-base text-violet-50 italic ml-[1.2rem] mt-4 md:ml-0">
+            <p className="flex items-center h-6 text-base font-medium text-text-secondary italic ml-[1.2rem] mt-4 md:ml-0">
               {props.date}
             </p>
-            <p className="flex items-center h-8 text-base text-violet-50 ml-[1.2rem] md:ml-0">
+            <p className="flex items-center h-8 text-base font-medium text-text-secondary ml-[1.2rem] md:ml-0">
               {props.type}
             </p>
           </div>
@@ -77,7 +78,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = (props) => {
                 </svg>
                 <h1 className="text-lg font-semibold">{item.header}</h1>
               </div>
-              <p className="ml-7 text-base font-medium text-slate-400">{item.body}</p>
+              <p className="ml-7 text-base font-medium text-text-secondary">{item.body}</p>
             </React.Fragment>
           ))}
         </ExperienceCard>

@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import SideMenu from "@/components/sideMenu/SideMenu";
-import { landingMenuItems } from "@/data/menuData"
+import Timeline from "@/components/global/Timeline";
+import { landingTimelineSections } from '@/data/menuData'
 
 export const metadata: Metadata = {
   title: "YevStrilets",
@@ -16,8 +16,8 @@ export default function RootLayout({
   return (
       <div>
         {children}
-        <div className="flex-grow">
-          <SideMenu menuList={landingMenuItems} />
+        <div className="flex-grow relative">
+           <Timeline menuList={landingTimelineSections} /> 
         </div>
       </div>
   );

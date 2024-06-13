@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { mergeRefs } from "@/utils/mergeRef";
-
+import { ThreeDCard } from "@/components/ThreeDCard";
 
 interface AnimatedGradientBorderCardProps {
   children: React.ReactNode;
@@ -66,12 +66,12 @@ const AnimatedGradientBorderCard: React.FC<AnimatedGradientBorderCardProps> = ({
 const Projects = () => {
   return (
     <div
-      className="w-full flex flex-col items-center justify-center gap-2 scroll-mt-20 md:gap-8"
+      className="w-full flex max-w-4xl items-center justify-center scroll-mt-20 space-x-8"
       id="projects-section"
     >
-      <div
+      {/* <div
         className="
-        flex flex-col 
+        flex
         w-full max-w-4xl
         items-center justify-center 
         font-bold text-3xl
@@ -80,11 +80,17 @@ const Projects = () => {
         md:items-start
         "
       >
-        <div className="md:mb-[2rem]">
+        <div className="md:mb-[2rem] dark:text-white text-main">
           <h1>Projects</h1>
         </div>
+      </div> */}
+      <div className="w-1/2">
+      <ThreeDCard />
       </div>
-      {projects.map((project) => (
+  <div className="w-1/2">
+  <ThreeDCard />
+    </div>
+      {/* {projects.map((project) => (
         <React.Fragment key={project.id}>
           <Link href={`/projects/${project.link}`}>
             <AnimatedGradientBorderCard bgColor={project.bgColor}>
@@ -106,14 +112,14 @@ const Projects = () => {
               </div>
             </AnimatedGradientBorderCard>
           </Link>
-          <div className="flex flex-col w-full max-w-4xl items-start justify-start mt-6 mb-12 text-violet-50">
+          <div className="flex flex-col w-full max-w-4xl items-start justify-start mt-1 mb-12 dark:text-white text-main">
             <h1 className="text-4xl font-semibold font-sans">
               {project.title}
             </h1>
             <h2 className="text-xl font-sans">{project.description}</h2>
           </div>
         </React.Fragment>
-      ))}
+      ))} */}
     </div>
   );
 };

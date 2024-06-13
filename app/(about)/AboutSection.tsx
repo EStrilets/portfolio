@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-[#141B2D] gap-8">
+    <div className="w-full flex flex-col items-center justify-center bg-second-light dark:bg-[#141B2D] gap-8">
       <div
         className="
         flex flex-col 
@@ -27,10 +27,10 @@ const AboutSection = () => {
         id="about-section"
       >
         <div>
-          <h1>About me</h1>
+          <h1 className="text-light-text dark:text-white">About me</h1>
         </div>
       </div>
-      <div className="flex flex-col max-w-4xl md:mb-[3rem] text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
+      <div className="flex flex-col max-w-4xl md:mb-[3rem] text-light-text dark:text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
         <div className="flex flex-col md:flex-1">
           <div className="space-y-10">
             <p className="text-xl font-sans leading-9">

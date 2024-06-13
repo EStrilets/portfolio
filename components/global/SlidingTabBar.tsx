@@ -38,8 +38,8 @@ let allTabs = [
 ];
 
 const menuItems = [
-  { name: "LinkedIn", icon: <FaLinkedinIn size={18} className="dark:text-white text-main-text-light" /> },
-  { name: "Github", icon: <FaGithubAlt size={18} className="dark:text-white text-main-text-light" /> },
+  { name: "LinkedIn", icon: <FaLinkedinIn size={18} className="dark:text-white text-light-text" /> },
+  { name: "Github", icon: <FaGithubAlt size={18} className="dark:text-white text-light-text" /> },
   // { name: "Notifications", icon: <FiBell /> },
 ];
 
@@ -73,10 +73,10 @@ export const SlidingTabBar = () => {
 
   return (
     <div
-      className="backdrop-filter backdrop-blur-sm bg-opacity-8
+      className="backdrop-filter backdrop-blur-sm bg-opacity-8 z-20
       transition-all duration-300 ease-in-out
       border-[1px] border-[#1e2a45]
-      bg-[#495b88] flew justify-center items-center align-middle sticky 
+      bg-[#283350] flew justify-center items-center align-middle sticky 
       bottom-4 mt-12 mx-auto flex w-max h-12 rounded-xl px-1"
     >
       <span
@@ -105,7 +105,7 @@ export const SlidingTabBar = () => {
                   >
                     {React.cloneElement(tab.icon, {
                       className: `${
-                        isActive ? "text-text" : "text-main-text-light dark:text-white"
+                        isActive ? "text-text" : "text-light-text dark:text-white"
                       }`,
                     })}
                   </Link>

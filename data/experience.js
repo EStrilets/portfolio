@@ -23,6 +23,7 @@ const experience = [
                 body: "Contributed to a 24% growth in monthly active users; resulting in 32,000$ in new additional revenue"
             }
         ],
+        sectionId: "exp-seo-soul-section"
     },
     {
         id: 2,
@@ -49,6 +50,7 @@ const experience = [
             },
 
         ],
+        sectionId: "exp-tiggy-section"
     },
 
 ]

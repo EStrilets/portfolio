@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { BiLogoHtml5 } from "react-icons/bi";
-import ExperienceCard from "../(experience)/ExprienceCard";
+import ExperienceCard from "../../components/ExprienceCard";
 import TechStackChart from "@/components/charts/TechStackChart";
 import {
     TbBrandNextjs,
@@ -102,7 +102,7 @@ const Skills = () => {
           "
       >
         <div className="mb-6 font-bold text-3xl">
-          <h1>Skills</h1>
+          <h1 className="dark:text-white text-main">Skills</h1>
         </div>
         <div className="grid w-full grid-cols-3 gap-4">
           <ExperienceCard colspan="col-span-1">

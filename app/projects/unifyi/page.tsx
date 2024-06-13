@@ -1,6 +1,6 @@
 "use client";
 
-import ExperienceCard from "@/app/(experience)/ExprienceCard";
+import ExperienceCard from "@/components/ExprienceCard"; 
 import UnifyiChart from "@/components/charts/UnifyiChart";
 import MainDiagram from "@/components/diagrams/MainDiagram";
 import Image from "next/image";

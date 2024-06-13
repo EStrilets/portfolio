@@ -1,10 +1,8 @@
 "use client";
-import ExperienceCard from "../(experience)/ExprienceCard";
-import Particles from '@/components/particles/Particles'
-
+import ExperienceCard from "../../components/ExprienceCard";
+import Particles from "@/components/particles/Particles";
 
 const Education = () => {
-
   return (
     <div
       className="w-full flex flex-col items-center justify-center gap-6 scroll-mt-20"
@@ -21,7 +19,7 @@ const Education = () => {
         md:items-start
         "
       >
-        <div className="mb-6">
+        <div className="mb-6 dark:text-white text-main">
           <h1>Education</h1>
         </div>
         <div className="grid w-full grid-cols-3 gap-4">
@@ -31,14 +29,20 @@ const Education = () => {
                 <h1 className="text-2xl text-[#87A9F8]">
                   Simon Fraser University
                 </h1>
-                <h1 className="text-lg font-medium italic">2018-2021</h1>
+                <h1 className="text-lg font-medium italic text-text-secondary">
+                  2018-2021
+                </h1>
               </div>
-              <p className="text-lg font-medium">Bachelor of Science</p>
+              <p className="text-lg font-medium dark:text-white text-main">
+                Bachelor of Science
+              </p>
               <div className="flex flex-row justify-between">
-                <p className="text-lg font-medium">
+                <p className="text-lg font-medium dark:text-white text-main">
                   Major in Computer Science
                 </p>
-                <p className="text-lg font-medium italic">Vancouver, Canada 🇨🇦</p>
+                <p className="text-lg font-medium italic text-text-secondary">
+                  Vancouver, Canada 🇨🇦
+                </p>
               </div>
             </div>
           </ExperienceCard>
