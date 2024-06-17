@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReadingBar from "../readingProgressBar/ReadingBar";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 type MenuItem = {
   text: string;

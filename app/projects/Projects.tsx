@@ -84,12 +84,12 @@ const Projects = () => {
           <h1>Projects</h1>
         </div>
       </div> */}
-      <div className="w-1/2">
+      <div className="max-w-4xl">
       <ThreeDCard />
       </div>
-  <div className="w-1/2">
+  {/* <div className="w-1/2">
   <ThreeDCard />
-    </div>
+    </div> */}
       {/* {projects.map((project) => (
         <React.Fragment key={project.id}>
           <Link href={`/projects/${project.link}`}>

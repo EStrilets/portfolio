@@ -14,8 +14,6 @@ import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { MdLightbulbOutline } from "react-icons/md";
 import { HiOutlineDocumentText } from "react-icons/hi";
 
-
-
 let allTabs = [
   {
     id: "home",
@@ -38,15 +36,22 @@ let allTabs = [
 ];
 
 const menuItems = [
-  { name: "LinkedIn", icon: <FaLinkedinIn size={18} className="dark:text-white text-light-text" /> },
-  { name: "Github", icon: <FaGithubAlt size={18} className="dark:text-white text-light-text" /> },
-  // { name: "Notifications", icon: <FiBell /> },
+  {
+    name: "LinkedIn",
+    icon: (
+      <FaLinkedinIn size={18} className="dark:text-white text-light-text" />
+    ),
+  },
+  {
+    name: "Github",
+    icon: <FaGithubAlt size={18} className="dark:text-white text-light-text" />,
+  },
 ];
 
 export const SlidingTabBar = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
   const homeTabIndex = allTabs.findIndex((tab) => tab.id === "home");
-  
+
   const [activeTabIndex, setActiveTabIndex] = useState<number>(homeTabIndex);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
@@ -92,24 +97,26 @@ export const SlidingTabBar = () => {
           <TooltipProvider delayDuration={100} key={index}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  ref={(el) => (tabsRef.current[index] = el)}
-                  className="my-auto cursor-pointer select-none rounded-full px-3 text-center font-light text-white"
-                  onClick={() => handleTabClick(index, tab.id)}
+                <Link
+                  className="mx-0 my-0"
+                  key={tab.id}
+                  href={tab.link ? tab.link : ""}
+                  target={tab.name === "Resume" ? "blank" : ""}
                 >
-                  <Link
-                    className="mx-0 my-0"
-                    key={tab.id}
-                    href={tab.link ? tab.link : ""}
-                    target={tab.name === "Resume" ? "blank" : ""}
+                  <button
+                    ref={(el) => (tabsRef.current[index] = el)}
+                    className="my-auto cursor-pointer select-none rounded-full px-3 text-center font-light text-white"
+                    onClick={() => handleTabClick(index, tab.id)}
                   >
                     {React.cloneElement(tab.icon, {
-                      className: `${
-                        isActive ? "text-text" : "text-light-text dark:text-white"
+                      className: `mt-[0.4rem] ${
+                        isActive
+                          ? "text-text"
+                          : "text-light-text dark:text-white"
                       }`,
                     })}
-                  </Link>
-                </button>
+                  </button>
+                </Link>
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-white">{tab.name}</p>
@@ -119,9 +126,8 @@ export const SlidingTabBar = () => {
         );
       })}
       <span className="inline-block justify-center align-middle h-[1.8rem] w-[0.125rem] self-stretch bg-second bg-white/10 rounded-lg mt-[0.6rem] mr-1" />
-        <Dropdown items={menuItems}  />
+      <Dropdown items={menuItems} />
       <DarkModeToggle />
     </div>
   );
 };
-

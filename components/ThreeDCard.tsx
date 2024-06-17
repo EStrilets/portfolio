@@ -23,10 +23,10 @@ export function ThreeDCard() {
         opacity: scrollYProgress,
       }}
     >
-      <CardContainer className="inter-var">
+      <CardContainer className="inter-var md:hover:shadow-[0px_2px_32px_0px_rgb(245,243,255,1)] rounded-xl">
         <CardBody
           className="relative group/card rounded-xl border-2 border-[#D6E3FA] dark:border-[#1E2A45] 
-        bg-second-light dark:bg-[#141B2D] dark:hover:shadow-2xl sm:w-[26rem] h-auto p-6"
+        bg-second-light dark:bg-[#EDB200] dark:hover:shadow-2xl sm:w-[50rem] h-auto p-6"
         >
           <CardItem
             translateZ="50"

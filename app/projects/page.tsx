@@ -1,4 +1,5 @@
 "use client";
+import Title3D from "@/components/animation/Title3D";
 import projects from "@/data/projects";
 import Image from "next/image";
 
@@ -19,7 +20,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     background: `${bgColor}`,
   };
 
-  console.log(bgColor);
   return (
     <div className="flex flex-col w-full max-w-4xl p-6 md:p-0 mb-4">
       <div className="flex flex-row z-10 m-2 flex-1 space-x-12 mt-10">
@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 const Projects = () => {
   return (
     <div
-      className="w-full flex flex-col items-center justify-center gap-2 scroll-mt-20 md:gap-8"
+      className="flex flex-col items-center justify-center gap-2 scroll-mt-20 md:gap-8"
       id="projects-section"
     >
       <div
@@ -92,9 +92,10 @@ const Projects = () => {
           <h1>Projects</h1>
         </div>
       </div>
-      {projects.map((project) => (
+      {/* {projects.map((project) => (
         <ProjectCard key={project.id} {...project} />
-      ))}
+      ))} */}
+          <Title3D />
     </div>
   );
 };

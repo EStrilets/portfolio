@@ -110,7 +110,7 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
               >
                 <motion.div
                   className={`h-[0.3rem] w-12 rounded-[4px] ${
-                    isActive ? "bg-[#5686f5]" : "bg-main dark:bg-white"
+                    isActive ? "bg-[#EDB200]" : "bg-main dark:bg-violet-50"
                   }`}
                   animate={{ scale: calculateScale(i) }}
                   initial={{ scale: 0.3 }}
@@ -119,7 +119,7 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
                 {hoveredIndex === i && (
                   <motion.span
                     className={`absolute -top-0.5 left-16 text-[14px] font-medium ${
-                      isSelected ? "text-text" : "text-main dark:text-white"
+                      isSelected ? "text-text" : "text-main dark:text-violet-50"
                     }`}
                     initial={{ opacity: 0, filter: `blur(2px)`, scale: 0.4 }}
                     animate={{ opacity: 1, filter: `blur(0px)`, scale: 1 }}
