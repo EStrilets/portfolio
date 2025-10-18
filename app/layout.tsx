@@ -1,13 +1,14 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import ToasterContext from "./context/ToasterContext";
-import { SlidingTabBar } from "@/components/global/SlidingTabBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@theme-toggles/react/css/Expand.css"
+import { GlobalMenu } from "@/components/global/GlobalMenu";
+import Footer from "@/components/global/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "YevStrilets",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-main-light dark:bg-[#190F18]`}>
+      <body className={`${inter.className} bg-main-light dark:bg-[#030508]`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -33,8 +34,9 @@ export default function RootLayout({
             {children}
             <Analytics />
           </div>
-          <SlidingTabBar />
+          <GlobalMenu />
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

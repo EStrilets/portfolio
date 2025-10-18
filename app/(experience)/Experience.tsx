@@ -4,19 +4,16 @@ import ExperienceItem from "./ExpereinceItem";
 
 const Experience = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-8">
+    <div className="w-full max-w-xl flex flex-col items-center justify-center gap-8">
       <div
         className="
         flex flex-col 
-        w-full max-w-4xl
         items-center justify-center 
-        font-bold text-3xl
         mt-[3rem]
-        text-violet-50
         md:items-start
         "
       >
-        <div className="mb-6 text-light-text dark:text-white">
+        <div className="mb-6 text-xl text-white font-bold">
           <h1>Experience</h1>
         </div>
         {experience.map((item) => (

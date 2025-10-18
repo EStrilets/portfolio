@@ -1,101 +1,102 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import LinkPreview from "@/components/LinkPreview";
+import { TextLoop } from "@/components/motion-primitives/text-loop";
+import { TextScramble } from "@/components/motion-primitives/text-scramble";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import SpeechBubble from "@/components/ui/speech-bubble";
+import SpeechBubble2 from "@/components/ui/speech-bubble2";
 
 const AboutSection = () => {
-  const router = useRouter();
-
-  const handleClick = (destination: string) => {
-    router.push(destination);
-  };
-
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-second-light dark:bg-[#141B2D] gap-8">
-      <div
-        className="
-        flex flex-col 
-        w-full max-w-4xl
-        items-center  
-        justify-center 
-        font-bold text-3xl
-        mt-[3rem]
-        text-violet-50
-        scroll-mt-40
-        md:items-start 
-        "
-        id="about-section"
-      >
-        <div>
-          <h1 className="text-light-text dark:text-white">About me</h1>
+    <div className="w-full max-w-xl mt-[8rem] md:mt-[14rem] p-12 md:p-0 text-light-text dark:text-violet-50">
+      <div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="mb-4 md:mb-0 relative">
+            <Avatar className="w-24 h-24 mb-6 ring-2 ring-offset-2 ring-offset-[#661e54] ring-[#661e54] hover:scale-105 transition-all duration-300 ease-in-out">
+              <AvatarImage src="/surfphoto.jpg" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <SpeechBubble>
+              <TextLoop className="font-mono text-base dark:text-white">
+                <span>
+                  Salut{" "}
+                  <span className="inline-block animate-wave -ml-1 mr-1 wave">
+                    👋🏻
+                  </span>
+                </span>
+                <span>
+                  Hello{" "}
+                  <span className="inline-block animate-wave -ml-1 mr-1 wave">
+                    👋🏻
+                  </span>
+                </span>
+                <span>
+                  Jimnbo{" "}
+                  <span className="inline-block animate-wave -ml-1 mr-1 wave">
+                    👋🏻
+                  </span>
+                </span>
+                <span>
+                  Limbo{" "}
+                  <span className="inline-block animate-wave -ml-1 mr-1 wave">
+                    👋🏻
+                  </span>
+                </span>
+              </TextLoop>
+            </SpeechBubble>
+            <SpeechBubble2>
+              <p className="text-center font-medium text-2xl leading-relaxed md:text-xl md:leading-loose dark:text-white">
+                I&apos;m Yev Strilets a fullstack development{" "}
+                <span className="inline-block animate-levitate">🚀</span>
+              </p>
+            </SpeechBubble2>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col max-w-4xl md:mb-[3rem] text-light-text dark:text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
-        <div className="flex flex-col md:flex-1">
-          <div className="space-y-10">
-            <p className="text-xl font-sans leading-9">
-              Since 2020, I&apos;ve been crafting UIs, specializing in creating component libraries, design systems, and front-end architecture. 
-              technologies and design led me to attend <br />{" "}
-              <strong className="text-text">
-                Simon Fraser University (SFU)
-              </strong>
-              , where I earned <br /> my Bachelor&apos; Degree of Science with a
-              major in Computer Science.
-            </p>
-            <p className="text-xl font-sans leading-9">
-              As my first big project, I gathered a team of 3 developers and
-              started to develop the full-stack application for the university
-              experience. My experiments and projects eventually got me my first
-              job out of university at{" "}
-              <strong className="text-text">Tiggy</strong>.
-            </p>
-          </div>
+      <div className="space-y-6">
+        <div className="flex-col justify-center mt-[10rem]">
+          <p className="text-xl text-white font-bold">About me</p>
         </div>
-        <div className="flex flex-col ml-0 space-y-10 items-start justify-start md:flex-1 md:ml-2">
-          <div>
-            <p className="text-xl font-sans leading-9">
-              There I have been working on a delivery app and nd received an
-              incredible amount of skills and knowledge starting from setting up
-              a component library to participating in extensive standup and code
-              reviews. After Tiggy, I got into the web development agency{" "}
-              <strong className="text-text">SEO Soul</strong>, where I developed
-              a Chrome extension for company needs and delivered features to
-              clients&apos; projects.
-            </p>
-          </div>
-          <p className="text-xl font-sans leading-9">
-            My experience spans working with startups on SaaS products, mobile apps, or e-commerce, 
-            as well as building products independently or alongside friends. 
+        <div className="flex-col justify-center">
+          <p className="text-lg text-gray-300">
+            Frontend engineer focused on building accessible, inclusive products
+            and digital experiences for the web.
+          </p>
+        </div>
+        <div className="flex-col justify-center">
+          <p className="text-lg text-gray-300">
+            I've built and developed various interactive applications throughout
+            my career, covering everything from SaaS to mobile and web
+            applications
           </p>
         </div>
       </div>
-      <div
-        className="
-        flex flex-col 
-        w-full max-w-4xl
-        items-start justify-center 
-        font-bold text-3xl
-        mb-[3rem]
-        text-violet-50
-        p-6
-        md:p-0
-        "
-      >
-        <Link href="/yevhenii_strilets_resume2023.pdf" target="blank">
-          <button
-            className="bg-[#262F45] rounded-md 
-              border border-solid border-[#7AA0F7]  
-              text-[#5686f5] font-semibold text-sm leading-5 
-              py-3 px-4 
-              text-center 
-              glow-on-hover
-              w-full
-              md:w-fit
-              "
+      <div className="flex flex-row items-center justify-start">
+        <span className="font-medium text-2xl leading-relaxed md:text-xl md:leading-loose mr-1">
+          Get in touch via Email or see my work on
+          <LinkPreview
+            url="https://ui.aceternity.com"
+            className="mx-1 font-medium text-xl"
           >
-            Resume
-          </button>
-        </Link>
+            Github
+          </LinkPreview>
+          or{" "}
+        </span>
+        <span className="group/blur blur-sm filter transition-all duration-500 ease-in-out focus-within:text-gray-400 focus-within:blur-none hover:text-gray-100 hover:blur-none focus:text-gray-300 focus:blur-none text-gray-400">
+          <span className="font-medium text-2xl leading-relaxed md:text-xl md:leading-loose">
+            {" "}
+            find me on
+            <LinkPreview
+              url="https://ui.aceternity.com"
+              className="font-medium text-xl"
+            >
+              {" "}
+              platforms{" "}
+            </LinkPreview>
+            I don't like using
+          </span>
+        </span>
       </div>
     </div>
   );

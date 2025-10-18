@@ -1,20 +1,18 @@
 "use client";
-import Title3D from "@/components/animation/Title3D";
-import projects from "@/data/projects";
 import Image from "next/image";
 
 interface ProjectCardProps {
   title?: string;
   images?: string[];
   bgColor?: string;
-  description?: string 
+  description?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   images,
   bgColor,
-  description
+  description,
 }) => {
   const inlineStyle = {
     background: `${bgColor}`,
@@ -63,9 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="flex flex-col items-start justify-start mt-8 text-violet-50">
         <h1 className="text-4xl font-semibold font-sans">{title}</h1>
-        <h2 className="text-xl font-sans">
-          {description}
-        </h2>
+        <h2 className="text-xl font-sans">{description}</h2>
       </div>
     </div>
   );
@@ -92,10 +88,6 @@ const Projects = () => {
           <h1>Projects</h1>
         </div>
       </div>
-      {/* {projects.map((project) => (
-        <ProjectCard key={project.id} {...project} />
-      ))} */}
-          <Title3D />
     </div>
   );
 };

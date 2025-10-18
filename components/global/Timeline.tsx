@@ -110,7 +110,7 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
               >
                 <motion.div
                   className={`h-[0.3rem] w-12 rounded-[4px] ${
-                    isActive ? "bg-[#EDB200]" : "bg-main dark:bg-violet-50"
+                    isActive ? "bg-text" : "bg-main dark:bg-violet-50"
                   }`}
                   animate={{ scale: calculateScale(i) }}
                   initial={{ scale: 0.3 }}

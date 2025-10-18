@@ -99,7 +99,7 @@ type LinkPreviewProps = {
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-second", className)}
+          className={cn("text-black dark:text-text", className)}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
@@ -137,7 +137,7 @@ type LinkPreviewProps = {
                   href={url}
                   className="block p-1 bg-violet-50 bg-clip-padding backdrop-filter 
                   backdrop-blur-sm bg-opacity-40 border-0 border-transparent shadow rounded-lg 
-                  transition duration-300 ease-in-out hover:border-neutral-200 dark:hover:bg-second/70"
+                  transition duration-300 ease-in-out hover:border-neutral-200 dark:hover:bg-text/70"
                   style={{ fontSize: 0 }}
                   target="_blank"
                   rel="noopener noreferrer"
