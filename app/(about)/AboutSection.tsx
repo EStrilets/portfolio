@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import ExperienceCard from "../(experience)/ExprienceCard";
 
 const AboutSection = () => {
   const router = useRouter();
@@ -30,44 +31,47 @@ const AboutSection = () => {
           <h1>About me</h1>
         </div>
       </div>
-      <div className="flex flex-col max-w-4xl md:mb-[3rem] text-violet-50 p-8 md:flex-row md:p-0 md:space-x-10">
-        <div className="flex flex-col md:flex-1">
-          <div className="space-y-10">
-            <p className="text-xl font-sans leading-9">
-              Since 2020, I&apos;ve been crafting UIs, specializing in creating component libraries, design systems, and front-end architecture. 
-              technologies and design led me to attend <br />{" "}
-              <strong className="text-text">
-                Simon Fraser University (SFU)
-              </strong>
-              , where I earned <br /> my Bachelor&apos; Degree of Science with a
-              major in Computer Science.
-            </p>
-            <p className="text-xl font-sans leading-9">
-              As my first big project, I gathered a team of 3 developers and
-              started to develop the full-stack application for the university
-              experience. My experiments and projects eventually got me my first
-              job out of university at{" "}
-              <strong className="text-text">Tiggy</strong>.
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col ml-0 space-y-10 items-start justify-start md:flex-1 md:ml-2">
-          <div>
-            <p className="text-xl font-sans leading-9">
-              There I have been working on a delivery app and nd received an
-              incredible amount of skills and knowledge starting from setting up
-              a component library to participating in extensive standup and code
-              reviews. After Tiggy, I got into the web development agency{" "}
-              <strong className="text-text">SEO Soul</strong>, where I developed
-              a Chrome extension for company needs and delivered features to
-              clients&apos; projects.
-            </p>
-          </div>
-          <p className="text-xl font-sans leading-9">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl md:mb-[3rem] text-violet-50 p-8 md:p-0">
+        <ExperienceCard colspan="col-span-1">
+          <p className="text-xl font-sans leading-9 text-blue-900">
+            Since 2020, I&apos;ve been crafting UIs, specializing in creating component libraries, design systems, and front-end architecture. 
+            technologies and design led me to attend <br />{" "}
+            <strong className="text-blue-800">
+              Simon Fraser University (SFU)
+            </strong>
+            , where I earned <br /> my Bachelor&apos; Degree of Science with a
+            major in Computer Science.
+          </p>
+        </ExperienceCard>
+        
+        <ExperienceCard colspan="col-span-1">
+          <p className="text-xl font-sans leading-9 text-blue-900">
+            As my first big project, I gathered a team of 3 developers and
+            started to develop the full-stack application for the university
+            experience. My experiments and projects eventually got me my first
+            job out of university at{" "}
+            <strong className="text-blue-800">Tiggy</strong>.
+          </p>
+        </ExperienceCard>
+        
+        <ExperienceCard colspan="col-span-1">
+          <p className="text-xl font-sans leading-9 text-blue-900">
+            There I have been working on a delivery app and nd received an
+            incredible amount of skills and knowledge starting from setting up
+            a component library to participating in extensive standup and code
+            reviews. After Tiggy, I got into the web development agency{" "}
+            <strong className="text-blue-800">SEO Soul</strong>, where I developed
+            a Chrome extension for company needs and delivered features to
+            clients&apos; projects.
+          </p>
+        </ExperienceCard>
+        
+        <ExperienceCard colspan="col-span-1">
+          <p className="text-xl font-sans leading-9 text-blue-900">
             My experience spans working with startups on SaaS products, mobile apps, or e-commerce, 
             as well as building products independently or alongside friends. 
           </p>
-        </div>
+        </ExperienceCard>
       </div>
       <div
         className="

@@ -45,7 +45,15 @@ interface ExperienceCardProps {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`row-span-1 ${colspan} relative overflow-hidden rounded-xl border-2 border-[#1E2A45] bg-[#141B2D] p-6 m-4 md:m-0`}
+        className={`row-span-1 ${colspan} relative overflow-hidden rounded-xl border-2 border-pink-200 p-6 m-4 md:m-0`}
+        style={{
+          background: `linear-gradient(45deg, 
+            #fce7f3, #fbcfe8, #f9a8d4, #fce7f3, #fbcfe8, #f9a8d4, #fce7f3, #fbcfe8, #f9a8d4, #fce7f3),
+            linear-gradient(-45deg, 
+            #fce7f3, #fbcfe8, #f9a8d4, #fce7f3, #fbcfe8, #f9a8d4, #fce7f3, #fbcfe8, #f9a8d4, #fce7f3)`,
+          backgroundSize: '400% 400%',
+          animation: 'waveBackground 8s ease-in-out infinite'
+        }}
       >
         <div
           className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"

@@ -166,3 +166,21 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes waveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 25%;
+  }
+  50% {
+    background-position: 100% 75%;
+  }
+  75% {
+    background-position: 0% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
