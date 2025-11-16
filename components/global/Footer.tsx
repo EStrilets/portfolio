@@ -13,12 +13,12 @@ const Footer = () => {
     }
   };
   return (
-    <footer className="bg-transperant mt-28 bg-[#141B2D] border-t-[0.5px] border-[#1E2A45] bottom-0">
-      <div className="mx-auto w-full max-w-4xl p-4 py-6 lg:py-8 text-white">
+    <footer className="bg-transperant mt-20 bottom-0 mb-20">
+      <div className="mx-auto w-full max-w-xl p-4 py-6 lg:py-8 border-t-[0.5px] border-gray-300 dark:border-[#1E2A45] text-gray-900 dark:text-white">
         <div className="md:flex md:justify-between">
-          <div className="grid grid-cols-2 space-x-10 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 space-x-10 sm:gap-6 sm:grid-cols-3 text-sm">
             <div>
-              <ul className="text-violet-50 dark:text-gray-400 font-medium">
+              <ul className="text-gray-700 dark:text-violet-50 font-medium">
                 <Link href="#about-section">
                   <li
                     onClick={scrollToView("about-section")}
@@ -27,18 +27,15 @@ const Footer = () => {
                     About
                   </li>
                 </Link>
-                <Link href="/yevhenii_strilets_resume2023.pdf" target="blank">
+                <Link href="/yevhenii_strilets_resume_2025.pdf" target="blank">
                   <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">
                     Resume
                   </li>
                 </Link>
-                <Link href="/contact">
-                  <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Contact</li>
-                </Link>
               </ul>
             </div>
             <div>
-              <ul className="text-violet-50 dark:text-gray-400 font-medium">
+              <ul className="text-gray-700 dark:text-violet-50 font-medium">
                 <Link href="https://github.com/EStrilets" target="_blank">
                   <li className="mb-4 cursor-pointer hover:underline hover:underline-offset-4">Github</li>
                 </Link>
@@ -57,7 +54,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="sm:flex sm:items-center sm:justify-between text-violet-50 mt-5">
+        <div className="sm:flex sm:items-center sm:justify-between text-gray-700 dark:text-violet-50 mt-5">
           © 2023 Yevhenii Strilets —— Vancouver, Canada
         </div>
       </div>

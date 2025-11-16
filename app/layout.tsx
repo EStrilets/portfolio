@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "@theme-toggles/react/css/Expand.css"
 import { GlobalMenu } from "@/components/global/GlobalMenu";
 import Footer from "@/components/global/Footer";
+import Timeline from "@/components/global/Timeline";
 
 const inter = Roboto({ subsets: ["latin"], weight: ["400"] });
 
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
   title: "YevStrilets",
   description: "Created by Yevhenii Strilets",
 };
+
+
+const timelineMenuList = {
+  sections: [
+    { id: "about-section", name: "About" },
+    { id: "experience-section", name: "Experience" },
+    { id: "education-section", name: "Education" },
+    { id: "contact-section", name: "Contact" }
+  ],
+  scrollOffset: 100
+}
 
 export default function RootLayout({
   children,
@@ -36,6 +48,7 @@ export default function RootLayout({
           </div>
           <GlobalMenu />
         </ThemeProvider>
+        <Timeline menuList={timelineMenuList} />
         <Footer />
       </body>
     </html>

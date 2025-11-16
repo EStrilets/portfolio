@@ -2,7 +2,6 @@
 
 import ExperienceCard from "@/components/ExprienceCard"; 
 import UnifyiChart from "@/components/charts/UnifyiChart";
-import MainDiagram from "@/components/diagrams/MainDiagram";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -130,7 +129,6 @@ export default function Unifyi() {
           </li>
         </ol>
         <ExperienceCard>
-          <MainDiagram />
         </ExperienceCard>
       </div>
       <div className="flex flex-col justify-center w-full max-w-3xl space-y-5 mt-[2rem] p-6 md:p-0 scroll-mt-40" id="overview-section">
@@ -274,7 +272,6 @@ export default function Unifyi() {
           </div>
         </div>
         <ExperienceCard>
-          <MainDiagram />
         </ExperienceCard>
       </div>
       <div className="w-full max-w-3xl"></div>

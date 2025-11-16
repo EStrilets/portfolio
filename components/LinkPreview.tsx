@@ -108,10 +108,11 @@ type LinkPreviewProps = {
         </HoverCardPrimitive.Trigger>
  
         <HoverCardPrimitive.Content
-          className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
+          className="[transform-origin:var(--radix-hover-card-content-transform-origin)] z-50"
           side="top"
-          align="center"
+          align="start"
           sideOffset={10}
+          alignOffset={-50}
         >
           <AnimatePresence>
             {isOpen && (

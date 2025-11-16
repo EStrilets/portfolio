@@ -69,72 +69,6 @@ main {
   90% { background-position: 10% 5%; }
   100% { background-position: 5% 0; }
 }
-.glow-on-hover {
-  position: relative;
-  z-index: 0;
-}
-
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #b2a0ff, #2cceff, #0060b9, #9b29e7, #00ffd5, #002bff, #7a00ff, #ff00c8, #b2a0ff);
-  position: absolute;
-  top: -2px;
-  left:-2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-}
-
-.glow-on-hover:hover:before {
-  opacity: 1;
-}
-
-.glow-on-hover:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #1B263E;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
-}
-
-.card-background { 
-  background: linear-gradient(90deg, #f3696e 0%, #f8a902 100%);;
-	animation: gradient 40s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -293,3 +227,20 @@ main {
        transform-origin: 84px 93px;
    }
 
+
+/* ReactFlow styling using CSS variables */
+.react-flow {
+  --xy-edge-stroke-default: #3b82f6;
+  --xy-edge-stroke-width-default: 2;
+  --xy-edge-stroke-selected-default: #2563eb;
+}
+
+/* ReactFlow markers - target SVG defs */
+.react-flow svg defs marker path {
+  fill: #3b82f6 !important;
+  stroke: #3b82f6 !important;
+}
+
+.react-flow__handle {
+  opacity: 0;
+}

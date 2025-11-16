@@ -2,9 +2,9 @@
 export const landingMenuItems = {
     items: [
         { text: 'About', section: 'about-section' },
-        { text: 'Experience', section: 'work-section' },
-        { text: 'Projects', section: 'projects-section' },
-        { text: 'Education & Skills', section: 'education-section' },
+        { text: 'Experience', section: 'experience-section' },
+        { text: 'Education', section: 'education-section' },
+        { text: 'Contact', section: 'contact-section' },
     ],
     scrollOffset: 450,
 };

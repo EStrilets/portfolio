@@ -90,7 +90,7 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
   };
 
   return (
-    <div className={`fixed top-0 mt-[8rem] tranlate-y-1/2 -ml-24
+    <div className={`fixed left-[calc(50%-38rem)] top-1/2 transform -translate-y-1/2 z-50
     ${isTimelineVisible ? "visible opacity-100 transition-opacity duration-300" : "invisible opacity-0 transition-opacity duration-300"}`}>
       <div className="flex h-[500px] w-[350px] items-center justify-center">
         <div className="flex flex-col">
@@ -119,7 +119,7 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
                 {hoveredIndex === i && (
                   <motion.span
                     className={`absolute -top-0.5 left-16 text-[14px] font-medium ${
-                      isSelected ? "text-text" : "text-main dark:text-violet-50"
+                      isSelected ? "text-gray-900 dark:text-violet-50" : "text-gray-700 dark:text-violet-50"
                     }`}
                     initial={{ opacity: 0, filter: `blur(2px)`, scale: 0.4 }}
                     animate={{ opacity: 1, filter: `blur(0px)`, scale: 1 }}

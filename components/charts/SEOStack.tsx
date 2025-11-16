@@ -12,55 +12,22 @@ import {
 import { FaNodeJs } from "react-icons/fa";
 import { SiGraphql } from "react-icons/si";
 import { BiLogoHtml5 } from "react-icons/bi";
-
-const LOGOS = [
-  <TbBrandNextjs width={50} height={24} className="text-white" key={1} />,
-  <TbBrandReact width={24} height={24} className="text-[#61DBFB]" key={2} />,
-  <TbBrandGithub width={24} height={24} className="text-violet-50" key={3} />,
-  <TbBrandJavascript
-    width={24}
-    height={24}
-    className="text-[#F0DB4f]"
-    key={4}
-  />,
-  <TbBrandTypescript
-    width={24}
-    height={24}
-    className="text-[#007acc]"
-    key={5}
-  />,
-  <BiLogoHtml5 width={24} height={24} className="text-[#e34c26]" key={5} />,
-  <TbBrandCss3 width={24} height={24} className="text-[#264de4]" key={7} />,
-  <TbBrandDocker width={24} height={24} className="text-[#0db7ed]" key={6} />,
-  <TbBrandTailwind width={24} height={24} className="text-[#1d8286]" key={8} />,
-  <FaNodeJs width={24} height={24} className="text-[#3c873a]" key={9} />,
-  <SiGraphql width={24} height={24} className="text-[#e535ab]" key={10} />,
-];
+import { InfiniteSlider } from "../motion-primitives/infinite-slider";
 
 export const SEOStack = () => {
   return (
-    <div
-      className="relative m-auto w-[850px] overflow-hidden bg-transparent before:absolute before:left-0 before:top-0 before:z-[2] 
-    before:h-full before:w-[100px] before:bg-[linear-gradient(to_right,white_0%, #0F1521_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[100px] after:-scale-x-100 after:bg-[linear-gradient(to_right,white_0%, #0F1521_100%)] after:content-['']"
-    >
-      <div className="animate-infinite-slider flex w-[calc(250px*10)]">
-        {LOGOS.map((logo, index) => (
-          <div
-            className="slide flex w-[125px] items-center justify-center"
-            key={index}
-          >
-            {logo}
-          </div>
-        ))}
-        {LOGOS.map((logo, index) => (
-          <div
-            className="slide flex w-[125px] items-center justify-center"
-            key={index}
-          >
-            {logo}
-          </div>
-        ))}
-      </div>
-    </div>
+    <InfiniteSlider speedOnHover={50} gap={24} className="mt-10">
+      <TbBrandNextjs className="w-6 h-6 text-white" key={1} />
+      <TbBrandReact className="w-6 h-6 text-[#61DBFB]" key={2} />
+      <TbBrandGithub className="w-6 h-6 text-violet-50" key={3} />
+      <TbBrandJavascript className="w-6 h-6 text-[#f0db4f]" key={4} />
+      <TbBrandTypescript className="w-6 h-6 text-[#3178c6]" key={11} />
+      <BiLogoHtml5 className="w-6 h-6 text-[#e34c26]" key={5} />
+      <TbBrandCss3 className="w-6 h-6 text-[#264de4]" key={7} />
+      <TbBrandDocker className="w-6 h-6 text-[#0db7ed]" key={6} />
+      <TbBrandTailwind className="w-6 h-6 text-[#1d8286]" key={8} />
+      <FaNodeJs className="w-6 h-6 text-[#3c873a]" key={9} />
+      <SiGraphql className="w-6 h-6 text-[#e535ab]" key={10} />
+    </InfiniteSlider>
   );
 };
