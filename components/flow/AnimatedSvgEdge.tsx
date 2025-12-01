@@ -1,0 +1,285 @@
+import React, { FC, useMemo } from "react";
+import type { Edge, EdgeProps, Position } from "@xyflow/react";
+import {
+  BaseEdge,
+  getBezierPath,
+  getStraightPath,
+  getSmoothStepPath,
+  useInternalNode,
+} from "@xyflow/react";
+
+import { getEdgeParams } from "./initialElements";
+
+export type AnimatedSvgEdge = Edge<{
+  /**
+   * The amount of time it takes, in seconds, to move the shape one from end of
+   * the edge path to the other.
+   */
+  duration: number;
+  /**
+   * The direction in which the shape moves along the edge path. Each value
+   * corresponds to the following behavior:
+   *
+   * - `forward`: The shape moves from the source node to the target node.
+   *
+   * - `reverse`: The shape moves from the target node to the source node.
+   *
+   * - `alternate`: The shape moves from the source node to the target node and
+   *   then back to the source node.
+   *
+   * - `alternate-reverse`: The shape moves from the target node to the source
+   *   node and then back to the target node.
+   *
+   * If not provided, this defaults to `"forward"`.
+   */
+  direction?: "forward" | "reverse" | "alternate" | "alternate-reverse";
+  /**
+   * Which of React Flow's path algorithms to use. Each value corresponds to one
+   * of React Flow's built-in edge types.
+   *
+   * If not provided, this defaults to `"bezier"`.
+   */
+  path?: "bezier" | "smoothstep" | "step" | "straight";
+  /**
+   * The number of times to repeat the animation before stopping. If set to
+   * `"indefinite"`, the animation will repeat indefinitely.
+   *
+   * If not provided, this defaults to `"indefinite"`.
+   */
+  repeat?: number | "indefinite";
+  shape: keyof typeof shapes;
+  /**
+   * The number of shapes to animate along the edge simultaneously.
+   * 
+   * If not provided, this defaults to 1.
+   */
+  count?: number;
+}>;
+
+/**
+ * The `AnimatedSvgEdge` component renders a typical React Flow edge and animates
+ * an SVG shape along the edge's path.
+ */
+export function AnimatedSvgEdge({
+  id,
+  source,
+  target,
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  sourcePosition,
+  targetPosition,
+  data = {
+    duration: 2,
+    direction: "forward",
+    path: "bezier",
+    repeat: "indefinite",
+    shape: "circle",
+    count: 1,
+  },
+  ...delegated
+}) {
+  // Add stable randomization using useMemo to prevent jumping on re-renders
+  const { randomDuration, randomDelay } = useMemo(() => ({
+    randomDuration: data.duration || (4 + Math.random() * 4),
+    randomDelay: Math.random() * 3,
+  }), [id, data.duration]); // Only recalculate if edge id or duration changes
+  
+  const sourceNode = useInternalNode(source);
+  const targetNode = useInternalNode(target);
+
+  if (!sourceNode || !targetNode) {
+    return null;
+  }
+
+  // Use the same custom positioning logic as FloatingEdge
+  const { sx, sy, tx, ty, sourcePos, targetPos } = getEdgeParams(
+    sourceNode,
+    targetNode,
+  );
+
+  const Shape = shapes[data.shape];
+
+  const [path] = getPath({
+    type: data.path ?? "bezier",
+    sourceX: sx,
+    sourceY: sy,
+    sourcePosition: sourcePos,
+    targetX: tx,
+    targetY: ty,
+    targetPosition: targetPos,
+  });
+
+  const count = data.count ?? 1;
+  
+  // Create multiple shapes with staggered delays
+  const animatedShapes = Array.from({ length: count }, (_, index) => {
+    const staggeredDelay = randomDelay + (index * randomDuration / count);
+    const animateMotionProps = getAnimateMotionProps({
+      duration: randomDuration,
+      direction: data.direction ?? "alternate",
+      repeat: data.repeat ?? "indefinite",
+      path,
+      delay: staggeredDelay,
+    });
+
+    return <Shape key={index} animateMotionProps={animateMotionProps} />;
+  });
+
+  return (
+    <>
+      <BaseEdge id={id} path={path} {...delegated} />
+      {animatedShapes}
+    </>
+  );
+}
+
+type AnimateMotionProps = {
+  dur: string;
+  keyTimes: string;
+  keyPoints: string;
+  repeatCount: number | "indefinite";
+  path: string;
+};
+
+type AnimatedSvg = FC<{ animateMotionProps: AnimateMotionProps }>;
+
+const shapes = {
+  circle: ({ animateMotionProps }) => (
+    <circle r="5" fill="#ff0073">
+      <animateMotion {...animateMotionProps} />
+    </circle>
+  ),
+
+  package: ({ animateMotionProps }) => (
+    <g fill="#dfc7b1" stroke="#2b2a2a" transform="translate(-10,-10)">
+      <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+      <path d="M12 22V12" />
+      <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7" />
+      <path d="m7.5 4.27 9 5.15" />
+      <animateMotion {...animateMotionProps} />
+    </g>
+  ),
+} satisfies Record<string, AnimatedSvg>;
+
+/**
+ * Chooses which of React Flow's edge path algorithms to use based on the provided
+ * `type`.
+ */
+function getPath({
+  type,
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  sourcePosition,
+  targetPosition,
+}: {
+  type: "bezier" | "smoothstep" | "step" | "straight";
+  sourceX: number;
+  sourceY: number;
+  targetX: number;
+  targetY: number;
+  sourcePosition: Position;
+  targetPosition: Position;
+}) {
+  switch (type) {
+    case "bezier":
+      return getBezierPath({
+        sourceX,
+        sourceY,
+        targetX,
+        targetY,
+        sourcePosition,
+        targetPosition,
+      });
+
+    case "smoothstep":
+      return getSmoothStepPath({
+        sourceX,
+        sourceY,
+        targetX,
+        targetY,
+        sourcePosition,
+        targetPosition,
+      });
+
+    case "step":
+      return getSmoothStepPath({
+        sourceX,
+        sourceY,
+        targetX,
+        targetY,
+        sourcePosition,
+        targetPosition,
+        borderRadius: 0,
+      });
+
+    case "straight":
+      return getStraightPath({
+        sourceX,
+        sourceY,
+        targetX,
+        targetY,
+      });
+  }
+}
+
+/**
+ * Construct the props for an `<animateMotion />` element based on an
+ * `AnimatedSvgEdge`'s data.
+ */
+function getAnimateMotionProps({
+  duration,
+  direction,
+  repeat,
+  path,
+  delay,
+}) {
+  const base = {
+    path,
+    repeatCount: repeat,
+    // The default calcMode for the `<animateMotion />` element is "paced", which
+    // is not compatible with the `keyPoints` attribute. Setting this to "linear"
+    // ensures that the shape correct follows the path.
+    calcMode: "linear",
+    begin: delay ? `${delay}s` : undefined,
+  };
+
+  switch (direction) {
+    case "forward":
+      return {
+        ...base,
+        dur: `${duration}s`,
+        keyTimes: "0;1",
+        keyPoints: "0;1",
+      };
+
+    case "reverse":
+      return {
+        ...base,
+        dur: `${duration}s`,
+        keyTimes: "0;1",
+        keyPoints: "1;0",
+      };
+
+    case "alternate":
+      return {
+        ...base,
+        // By doubling the animation duration, the time spent moving from one end
+        // to the other remains consistent when switching between directions.
+        dur: `${duration * 2}s`,
+        keyTimes: "0;0.5;1",
+        keyPoints: "0;1;0",
+      };
+
+    case "alternate-reverse":
+      return {
+        ...base,
+        dur: `${duration * 2}s`,
+        keyTimes: "0;0.5;1",
+        keyPoints: "1;0;1",
+      };
+  }
+}

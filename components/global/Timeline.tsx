@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
+import { MusicPlayer } from "./MusicPlayer";
 
 type TimeLineItem = {
   id: string;
@@ -131,6 +132,9 @@ const Timeline: React.FC<TimelineProps> = ({ menuList }) => {
               </button>
             );
           })}
+          <div className="mt-8">
+            <MusicPlayer />
+          </div>
         </div>
       </div>
     </div>

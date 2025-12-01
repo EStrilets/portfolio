@@ -51,6 +51,7 @@
     "react-awesome-reveal": "^4.2.5",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
+    "react-h5-audio-player": "^3.10.1",
     "react-hook-form": "^7.45.2",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",

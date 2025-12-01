@@ -6,6 +6,7 @@ import ToasterContext from "./context/ToasterContext";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@theme-toggles/react/css/Expand.css"
 import { GlobalMenu } from "@/components/global/GlobalMenu";
+import { MusicPlayer } from "@/components/global/MusicPlayer";
 import Footer from "@/components/global/Footer";
 import Timeline from "@/components/global/Timeline";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 const timelineMenuList = {
   sections: [
     { id: "about-section", name: "About" },
+    { id: "flow-section", name: "Flow" },
     { id: "experience-section", name: "Experience" },
     { id: "education-section", name: "Education" },
     { id: "contact-section", name: "Contact" }

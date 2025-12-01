@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ReactFlow Styles */
+/* .floating-edges {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+} */
+
+/* .floating-edges .react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow {
+  border: none !important;
+}
+
+.react-flow__node {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+} */
+ 
+/* .react-flow.dark {
+  --xy-background-color: #1a1a1a;
+  --xy-node-boxshadow-default:
+    0px 3.54px 4.55px 0px rgba(255, 255, 255, 0.05),
+    0px 3.54px 4.55px 0px rgba(255, 255, 255, 0.13),
+    0px 0.51px 1.01px 0px rgba(255, 255, 255, 0.2);
+  --xy-theme-color-focus: #535353;
+} */
+
+/* .react-flow__edge.selectable:hover .react-flow__edge-path,
+.react-flow__edge.selectable.selected .react-flow__edge-path {
+  stroke: var(--xy-theme-edge-hover);
+}
+
+/* Hide React Flow attribution */
+/* .react-flow__attribution {
+  display: none !important;
+} */ */
+
 
 html { 
   scroll-behavior: smooth;
@@ -11,63 +52,8 @@ main {
   font-family: "Cormorant Garamond", serif;
 }
 
-.noice { 
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('/RectanglePink.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .7s infinite;
-  opacity: .25;
-  visibility: visible;
-}
-
-.noice2 { 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent url('/Rectangle4.png') repeat 0 0;
-  animation: bg-animation2 .2s infinite;
-  opacity: .17;
-  visibility: visible;
-}
-
 .wave { 
   transform-origin: 70% 70%; 
-}
-
-@keyframes bg-animation {
-  0% { transform: translate(0,0) }
-  10% { transform: translate(-5%,-5%) }
-  20% { transform: translate(-10%,5%) }
-  30% { transform: translate(5%,-10%) }
-  40% { transform: translate(-5%,15%) }
-  50% { transform: translate(-10%,5%) }
-  60% { transform: translate(15%,0) }
-  70% { transform: translate(0,10%) }
-  80% { transform: translate(-15%,0) }
-  90% { transform: translate(10%,5%) }
-  100% { transform: translate(5%,0) }
-}
-
-@keyframes bg-animation2 {
-  0% { background-position: 0 0; }
-  10% { background-position: -5% -5%; }
-  20% { background-position: -10% 5%; }
-  30% { background-position: 5% -10%; }
-  40% { background-position: -5% 15%; }
-  50% { background-position: -10% 5%; }
-  60% { background-position: 15% 0; }
-  70% { background-position: 0 10%; }
-  80% { background-position: -15% 0; }
-  90% { background-position: 10% 5%; }
-  100% { background-position: 5% 0; }
 }
 
 ::-webkit-scrollbar {
@@ -160,81 +146,6 @@ main {
   transform: translateY(0);
 }
 
-
-/* Shadow of the LinkedIn contact */
-.custom-text-shadow {
-  text-shadow: #6c79b4 0 0 14px;
-}
-
-.custom-text-shadow:hover {
-  text-shadow: none;
-  transition: ease-in-out;
-  transition-duration: 100ms;
-}
-
-/* Wave button underline */
-.wave-btn {
-  position: relative;
-  color: inherit;
-  text-decoration: none
-}
-
-.wave-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  /* Adjust as necessary */
-  width: 100%;
-  height: 2px;
-  /* Adjust as necessary */
-  background-image: linear-gradient(to right, currentColor 50%, transparent 50%);
-  background-size: 6px 2px;
-  /* Adjust for wavy effect */
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-in-out;
-}
-
-.wave-btn:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-/* Animated Background Blob */
-
-@keyframes rotate {
-  0% {
-           transform: rotate(0deg);
-       }
-       100% {
-           transform: rotate(360deg);
-       }
-   }
-   .out-top {
-       animation: rotate 20s linear infinite;
-       transform-origin: 13px 25px;
-   }
-   .in-top {
-       animation: rotate 10s linear infinite;
-       transform-origin: 13px 25px;
-   }
-   .out-bottom {
-       animation: rotate 25s linear infinite;
-       transform-origin: 84px 93px;
-   }
-   .in-bottom {
-       animation: rotate 15s linear infinite;
-       transform-origin: 84px 93px;
-   }
-
-
-/* ReactFlow styling using CSS variables */
-.react-flow {
-  --xy-edge-stroke-default: #3b82f6;
-  --xy-edge-stroke-width-default: 2;
-  --xy-edge-stroke-selected-default: #2563eb;
-}
-
 /* ReactFlow markers - target SVG defs */
 .react-flow svg defs marker path {
   fill: #3b82f6 !important;
@@ -243,4 +154,272 @@ main {
 
 .react-flow__handle {
   opacity: 0;
+}
+
+/* Override ReactFlow default node styles to show custom components */
+.react-flow__node {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Audio Node player */
+
+.custom-style.rap-container {
+  background: rgba(86, 134, 245, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(86, 134, 245, 0.4);
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  width: 7rem;
+}
+
+.custom-style.rap-container .rap-slider .rap-progress {
+  background-color: rgba(86, 134, 245, 0.6);
+  border-radius: 4px;
+}
+
+.custom-style.rap-container .rap-slider .rap-progress .rap-pin {
+  background-color: rgba(86, 134, 245, 0.9);
+  height: 18px;
+  width: 18px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.custom-style.rap-container .rap-controls .rap-slider .rap-progress .rap-pin {
+  top: -5px;
+}
+
+.custom-style.rap-container .rap-controls .rap-slider {
+  width: 8px;
+  height: 100px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 15px auto;
+  writing-mode: tb-rl;
+  appearance: slider-vertical;
+  -webkit-appearance: slider-vertical;
+}
+
+.custom-style.rap-container .rap-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+
+.custom-style.rap-container .rap-volume .rap-volume-btn.rap-volume-open path {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.custom-style.rap-container .rap-volume .rap-volume-controls {
+  background: rgba(86, 134, 245, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(86, 134, 245, 0.3);
+}
+
+.custom-style.rap-container .rap-volume .rap-volume-controls .rap-slider,
+.custom-style.rap-container
+  .rap-volume
+  .rap-volume-controls
+  .rap-slider
+  .rap-progress {
+  width: 8px;
+}
+
+/* Vertical layout styles */
+.custom-style.rap-container .rap-name {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.custom-style.rap-container .rap-artist {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 8px;
+  opacity: 0.7;
+}
+
+.custom-style.rap-container .rap-controls .rap-controls-btns {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.custom-style.rap-container .rap-controls .rap-controls-btns button {
+  margin: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.custom-style.rap-container .rap-volume {
+  margin: 0;
+  padding: 0;
+}
+
+/* Force minimal spacing between all elements */
+.custom-style.rap-container * {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-style.rap-container .rap-controls > * {
+  margin: 0;
+}
+
+/* Force buttons to be touching */
+.custom-style.rap-container .rap-controls .rap-controls-btns,
+.custom-style.rap-container .rap-volume {
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.custom-style.rap-container .rap-controls {
+  gap: 0;
+  justify-content: center;
+}
+
+/* Hide time displays and progress slider */
+.custom-style.rap-container .rap-controls .rap-slider {
+  display: none;
+}
+
+.custom-style.rap-container .rap-current-time,
+.custom-style.rap-container .rap-total-time {
+  display: none;
+}
+
+.custom-style.rap-container .rap-progress-container {
+  display: none;
+}
+
+/* Timeline Audio Player Styles - Matching GlobalMenu */
+.timeline-music-player {
+  display: flex;
+  justify-content: center;
+  width: 48px;
+}
+
+.timeline-audio-player.rhap_container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-width: unset !important;
+  width: 48px !important;
+  border: none !important;
+}
+
+.timeline-audio-player .rhap_controls-section {
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.timeline-audio-player .rhap_main-controls {
+  flex-direction: column !important;
+  margin: 0 !important;
+  flex: none !important;
+}
+
+.timeline-audio-player .rhap_volume-controls {
+  flex-direction: column !important;
+  align-items: center !important;
+  margin: 0 !important;
+  flex: none !important;
+  justify-content: center !important;
+}
+
+/* Override rhap_button-clear and apply custom styling */
+.timeline-audio-player .rhap_play-pause-button.rhap_button-clear {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(86, 134, 245, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(86, 134, 245, 0.4) !important;
+  color: rgb(115 115 115) !important;
+  transition: all 0.3s ease !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+.timeline-audio-player .rhap_play-pause-button.rhap_button-clear:hover {
+  background: rgba(86, 134, 245, 0.25) !important;
+  transform: scale(1.05) !important;
+  opacity: 1 !important;
+}
+
+.timeline-audio-player .rhap_play-pause-button.rhap_button-clear:active {
+  opacity: 1 !important;
+  transform: scale(0.95) !important;
+}
+
+.timeline-audio-player .rhap_volume-button.rhap_button-clear {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(86, 134, 245, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(86, 134, 245, 0.4) !important;
+  color: rgb(115 115 115) !important;
+  transition: all 0.3s ease !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+.timeline-audio-player .rhap_volume-button.rhap_button-clear:hover {
+  background: rgba(86, 134, 245, 0.25) !important;
+  transform: scale(1.05) !important;
+  opacity: 1 !important;
+}
+
+.timeline-audio-player .rhap_volume-button.rhap_button-clear:active {
+  opacity: 1 !important;
+  transform: scale(0.95) !important;
+}
+
+/* Dark mode styles for timeline audio player */
+.dark .timeline-audio-player .rhap_play-pause-button.rhap_button-clear,
+.dark .timeline-audio-player .rhap_volume-button.rhap_button-clear {
+  color: rgb(212 212 212) !important;
+}
+
+/* Hide time displays and progress for timeline player */
+.timeline-audio-player .rhap_progress-section {
+  display: none !important;
+}
+
+.timeline-audio-player .rhap_time {
+  display: none !important;
+}
+
+.timeline-audio-player .rhap_volume-bar-area {
+  display: none !important;
+}
+
+.timeline-audio-player .rhap_volume-container {
+  display: none !important;
+}
+
+.timeline-audio-player .rhap_additional-controls {
+  display: none !important;
 }
